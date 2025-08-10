@@ -6,4 +6,4 @@ title: "Home"
 This homepage mirrors the two-level content structure.
 
 ## Sections
-{{< partial "home-sections.html" >}}
+{{< home-sections >}}
