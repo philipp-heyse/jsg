@@ -38,7 +38,7 @@
 
   {{/* Subnav: children of current section */}}
   {{ $current := .CurrentSection }}
-  {{ if $current }}
+  {{ if and (not .IsHome) (.CurrentSection) }}
     {{ $children := $current.Pages }}
     {{ if gt (len $children) 0 }}
       <div class="subnav">
