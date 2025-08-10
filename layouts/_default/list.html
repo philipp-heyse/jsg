@@ -4,11 +4,11 @@
     {{ .Content }}
   {{ end }}
   {{ if gt (len .Pages) 0 }}
-  <h2>In this section</h2>
-  <ul>
-    {{ range .Pages.ByTitle }}
-      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
-    {{ end }}
-  </ul>
+    <h2>In diesem Bereich</h2>
+    <ul>
+      {{ range .Pages.ByTitle }}
+        <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+      {{ end }}
+    </ul>
   {{ end }}
 {{ end }}
