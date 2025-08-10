@@ -1,0 +1,14 @@
+{{ define "main" }}
+  <h1>{{ .Title }}</h1>
+  {{ if .Content }}
+    {{ .Content }}
+  {{ end }}
+  {{ if gt (len .Pages) 0 }}
+  <h2>In this section</h2>
+  <ul>
+    {{ range .Pages.ByTitle }}
+      <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+    {{ end }}
+  </ul>
+  {{ end }}
+{{ end }}

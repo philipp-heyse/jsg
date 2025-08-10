@@ -1,0 +1,10 @@
+baseURL = "/"
+languageCode = "en-us"
+title = "Hugo Two-Level Menu"
+theme = ""
+paginate = 10
+enableRobotsTXT = true
+# We'll set baseURL at build time in the GitHub Action; local dev uses "/"
+
+[markup.goldmark.renderer]
+  unsafe = true

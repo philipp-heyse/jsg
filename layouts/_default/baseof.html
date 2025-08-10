@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{{ .Title }} | {{ .Site.Title }}</title>
+  <link rel="icon" href="/favicon.ico">
+  <style>
+    :root { --w: 1100px; --muted:#667085; }
+    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; line-height:1.6; }
+    header, footer { border-bottom:1px solid #eee; }
+    footer { border-top:1px solid #eee; border-bottom:none; }
+    .container { max-width: var(--w); margin: 0 auto; padding: 1rem 1.25rem; }
+    nav a { text-decoration: none; margin-right: 1rem; color: #111; }
+    nav a.active { font-weight: 600; }
+    .subnav { border-bottom:1px solid #f0f0f0; background:#fafafa; }
+    .subnav a { margin-right:.75rem; font-size:.95rem; color:#333; text-decoration:none; }
+    .muted { color: var(--muted); }
+    main { min-height:60vh; }
+    article { max-width: 70ch; }
+    pre, code { background:#f6f8fa; padding:.15rem .35rem; border-radius:6px; }
+    h1,h2,h3 { line-height:1.25; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
+      <a href="{{ "/" | relURL }}" style="font-weight:700">{{ .Site.Title }}</a>
+      <nav>
+                    {{/* Top-level sections excluding home & footer pages */}}
+            {{ $exclude := slice "impressum" "kontakt" "datenschutz" "" }}
+            {{ range where .Site.Sections "Section" "not in" $exclude }}
+              <a href="{{ .RelPermalink }}" class="{{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}active{{ end }}{{ end }}">{{ .Title }}</a>
+            {{ end }}
+{{ end }}">{{ .Title }}</a>
+        {{ end }}
+      </nav>
+    </div>
+  </header>
+
+  {{/* Secondary nav: children of current section */}}
+  {{ $current := .CurrentSection }}
+  {{ if $current }}
+  {{ $children := $current.Pages }}
+  {{ if gt (len $children) 0 }}
+  <div class="subnav">
+    <div class="container">
+      {{ range $children.ByTitle }}
+        <a href="{{ .RelPermalink }}" class="{{ if eq .RelPermalink $.RelPermalink }}active{{ end }}">{{ .Title }}</a>
+      {{ end }}
+    </div>
+  </div>
+  {{ end }}
+  {{ end }}
+
+  <main class="container">
+    <article>
+      {{ block "main" . }}{{ end }}
+    </article>
+  </main>
+
+        <footer>
+        <div class="container muted">
+          © {{ now.Year }} · Built with Hugo · 2-level menu from folders<br>
+          <a href="/impressum/">Impressum</a> · 
+          <a href="/kontakt/">Kontakt</a> · 
+          <a href="/datenschutz/">Datenschutz</a> · 
+          <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> · 
+          <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+        </div>
+      </footer>
+
+</body>
+</html>

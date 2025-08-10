@@ -1,0 +1,14 @@
+{{/* List all sections with their children */}}
+<ul>
+  {{ range .Site.Sections.ByTitle }}
+    <li><a href="{{ .RelPermalink }}">{{ .Title }}</a>
+      {{ if gt (len .Pages) 0 }}
+        <ul>
+          {{ range .Pages.ByTitle }}
+            <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </li>
+  {{ end }}
+</ul>
