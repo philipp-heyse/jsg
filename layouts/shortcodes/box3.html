@@ -1,0 +1,29 @@
+{{/* 3er-Box (grid mit 3 Karten)
+    Nutzung:
+    {{< box3 >}}
+      {{< box3item
+          title="ANSPRECHPARTNER"
+          link="{{< relref "ansprechpartner/_index.md" >}}"
+          icon="users" >}}
+        Du hast Fragen rund um die JSG? Hier kannst Du alles raushauen!
+      {{< /box3item >}}
+
+      {{< box3item
+          title="ANMELDUNG"
+          link="{{< relref "anmeldung-beitraege/_index.md" >}}"
+          icon="file-check" >}}
+        Der Königstransfer steht kurz vorm Abschluss? Hier machst Du den Deckel drauf!
+      {{< /box3item >}}
+
+      {{< box3item
+          title="BEITRÄGE"
+          link="{{< relref "anmeldung-beitraege/_index.md" >}}#beitraege"
+          icon="euro" >}}
+        Pssst! Hier gibt’s exklusives Insiderwissen zu unseren Mitgliedsbeiträgen!
+      {{< /box3item >}}
+    {{< /box3 >}}
+*/}}
+
+<div class="box3" role="list">
+  {{ .Inner }}
+</div>

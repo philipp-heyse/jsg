@@ -2,9 +2,17 @@ baseURL = "/"
 languageCode = "en-us"
 title = "Hugo Two-Level Menu"
 enableRobotsTXT = true
+toc = false
+disableToc = true
+showInThisSection = false      # Beispielname – siehe unten „finden“
+showSectionMenu = false
+
 
 [markup.goldmark.renderer]
   unsafe = true
 
 [pagination]
   pagerSize = 10
+
+
+

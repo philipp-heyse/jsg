@@ -1,0 +1,42 @@
+{{- $title       := .Get "title" -}}
+{{- $link        := .Get "link" -}}           {{/* externer Link zur Vereinsseite */}}
+{{- $members     := .Get "members" -}}        {{/* z.B. "ca. 1.250" */}}
+{{- $departments := .Get "departments" -}}    {{/* z.B. "Fußball, Handball, ..." */}}
+{{- $logo        := .Get "logo" -}}           {{/* Dateiname in assets/logos/… (SVG/PNG) oder Pfad unter static/… */}}
+
+<article class="clubs3-item" role="listitem">
+  <a class="clubs3-card" href="{{ $link }}" target="_blank" rel="noopener">
+    <span class="clubs3-logo" aria-hidden="true">
+      {{- if $logo -}}
+        {{- $try := resources.Get (printf "logos/%s" $logo) -}}
+        {{- if $try -}}
+          {{- /* Inline-SVG bevorzugen (färbbar via CSS); PNG/JPG werden als <img> ausgegeben */ -}}
+          {{- if eq (lower (path.Ext $try.Name)) ".svg" -}}
+            {{ $try.Content | safeHTML }}
+          {{- else -}}
+            <img src="{{ $try.RelPermalink }}" alt="{{ $title }} Logo" />
+          {{- end -}}
+        {{- else -}}
+          {{- /* Fallback: wenn $logo kein Asset ist, als (statischer) Pfad rendern */ -}}
+          <img src="{{ $logo | relURL }}" alt="{{ $title }} Logo" />
+        {{- end -}}
+      {{- end -}}
+    </span>
+
+    <h3 class="clubs3-title">{{ $title }}</h3>
+
+    {{- if or $members $departments -}}
+      <p class="clubs3-meta">
+        {{- with $members -}}Mitglieder: {{ . }}{{ end -}}
+        {{- if and $members $departments -}} · {{ end -}}
+        {{- with $departments -}}Abteilungen: {{ . }}{{ end -}}
+      </p>
+    {{- end -}}
+
+    {{- with .Inner -}}
+      <p class="clubs3-text">{{ . | markdownify }}</p>
+    {{- end -}}
+
+    <span class="clubs3-cta" aria-hidden="true">Zum&nbsp;Stammverein&nbsp;→</span>
+  </a>
+</article>

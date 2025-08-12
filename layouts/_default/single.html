@@ -1,4 +1,7 @@
 {{ define "main" }}
   <h1>{{ .Title }}</h1>
+  {{ with .description }}
+    <p class="page-description">{{ . }}</p>
+  {{ end }}
   {{ .Content }}
 {{ end }}
