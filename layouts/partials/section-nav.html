@@ -1,0 +1,29 @@
+{{/* Hole die Section – oder fallback auf die aktuelle Seite, wenn wir schon auf einer Section-Landing stehen */}}
+{{ $sec := .CurrentSection }}
+{{ if not $sec }}
+  {{ if .IsSection }}
+    {{ $sec = . }}
+  {{ end }}
+{{ end }}
+
+
+{{ if $sec }}
+  {{/* Alle echten Unterseiten (keine _index), sortiert nach weight und title */}}
+  {{ $pages := where $sec.Pages "Kind" "page" }}
+  {{ $sorted := sort $pages "Weight" "Title" }}
+
+  <nav class="section-nav" aria-label="{{ $sec.Title }}">
+    <h2 class="section-nav__title">
+      <a href="{{ $sec.RelPermalink }}">{{ $sec.Title }}</a>
+    </h2>
+    <ul class="section-nav__list">
+      {{ range $p := $sorted }}
+        <li>
+          <a href="{{ $p.RelPermalink }}" class="{{ if eq $.RelPermalink $p.RelPermalink }}is-active{{ end }}">
+            {{ $p.Title }}
+          </a>
+        </li>
+      {{ end }}
+    </ul>
+  </nav>
+{{ end }}

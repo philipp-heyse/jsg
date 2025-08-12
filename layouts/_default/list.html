@@ -1,10 +1,16 @@
 {{ define "main" }}
-  <h1>{{ .Title }}</h1>
-  {{ with .Description }}
-    <h3 class="page-description">{{ . }}</h3>
-  {{ end }}
+  
+<aside class="sidebar">
+  {{ partial "section-nav.html" . }}
+</aside>
+
+<h1>{{ .Title }}</h1>
+
+<article class="content">
+  
   {{ if .Content }}
     {{ .Content }}
   {{ end }}
+</article>
 
 {{ end }}
