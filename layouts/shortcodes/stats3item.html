@@ -1,0 +1,25 @@
+{{- $icon  := .Get "icon" -}}
+{{- $value := .Get "value" -}}
+{{- $label := .Get "label" -}}
+{{- $href  := .Get "href" -}}
+
+{{- $svg := resources.Get (printf "icons/%s.svg" $icon) -}}
+
+{{- $url := "" -}}
+{{- if $href -}}
+  {{- if or (hasPrefix $href "http://") (hasPrefix $href "https://") -}}
+    {{- $url = $href -}}
+  {{- else -}}
+    {{- $url = relref .Page $href -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if $url -}}<a href="{{ $url }}" class="stats3-link">{{- end -}}
+  <div class="stats3-card">
+    <span class="stats3-icon" aria-hidden="true">
+      {{- with $svg -}}{{ .Content | safeHTML }}{{- end -}}
+    </span>
+    <div class="stats3-value">{{ $value }}</div>
+    <div class="stats3-label">{{ $label }}</div>
+  </div>
+{{- if $url -}}</a>{{- end -}}

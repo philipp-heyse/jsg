@@ -24,23 +24,11 @@ Deshalb haben wir uns mit unseren Stammvereinen **Garbenteich, Hausen und Annero
 
 ## Zahlen, Daten, Fakten
 
-<div class="stats">
-  <div class="stat">
-    {{< icon name="presentation" >}}
-    <div class="value">2021</div>
-    <div class="label">Gründung</div>
-  </div>
-  <div class="stat">
-    {{< icon name="group" >}}
-    <div class="value">10</div>
-    <div class="label">Teams</div>
-  </div>
-  <div class="stat">
-    {{< icon name="stadium" >}}
-    <div class="value">3</div>
-    <div class="label">Stadien</div>
-  </div>
-</div>
+{{< stats3 >}}
+  {{< stats3item icon="presentation"  value="2021" label="Gründung" >}}
+  {{< stats3item icon="group"   value="XX"   label="Teams"    href="unsere-teams" >}}
+  {{< stats3item icon="stadium" value="3"    label="Stadien"  href="training-spiel/trainingsorte" >}}
+{{< /stats3 >}}
 
 ---
 

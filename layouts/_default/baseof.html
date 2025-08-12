@@ -70,6 +70,17 @@
 .clubs3-title { margin: .25rem 0; font-weight: 800; font-size: 1.05rem; }
 .clubs3-meta { margin: 0; color:#374151; }
 .clubs3-cta { margin-top:.25rem; font-weight:600; color:#111827; }
+
+.stats3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
+@media (max-width: 900px){ .stats3 { grid-template-columns:1fr; } }
+
+.stats3-link { text-decoration:none; color:inherit; }
+.stats3-card { display:grid; justify-items:center; gap:.25rem; padding:1rem; border:1px solid #e5e7eb; border-radius:14px; background:#fff; }
+.stats3-icon svg { width:28px; height:28px; display:block; color:#111827; }
+.stats3-value { font-size:1.5rem; line-height:1.2; font-weight:800; letter-spacing:.2px; }
+.stats3-label { color:#374151; font-weight:600; text-transform:uppercase; font-size:.8rem; letter-spacing:.04em; }
+
+
   </style>
 </head>
 <body>
