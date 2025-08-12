@@ -6,5 +6,11 @@ enableRobotsTXT = true
 [markup.goldmark.renderer]
   unsafe = true
 
+menu]
+  [[menu.main]]
+  name = "Hugo Two-Level Menu"
+  pageRef = "/hugo-two-level-menu/"   # Pfad zur Seite/Section
+  weight = 10
+
 [pagination]
   pagerSize = 10
