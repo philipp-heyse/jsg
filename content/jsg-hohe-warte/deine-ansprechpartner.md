@@ -1,6 +1,6 @@
 ---
 title: "Deine Ansprechpartner"
-weight: 15
+weight: 20
 description: "Wir lieben das direkte Spiel – hier findest du schnell die richtigen Kontakte."
 ---
 

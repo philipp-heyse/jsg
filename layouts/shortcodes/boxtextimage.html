@@ -1,0 +1,20 @@
+<div class="boxtextimage {{ .Get "position" }}">
+  <div class="boxtextimage__content">
+    <h3>{{ .Get "title" }}</h3>
+    <div class="boxtextimage__text">
+      {{ .Inner | markdownify }}
+    </div>
+    {{ with .Get "link" }}
+      <p><a href="{{ . }}" class="boxtextimage__link">Mehr erfahren →</a></p>
+    {{ end }}
+  </div>
+
+  <div class="boxtextimage__image">
+    {{ with .Get "image" }}
+      <img src="{{ . }}" alt="{{ $.Get "title" }}">
+    {{ else }}
+      <!-- Platzhalterbild -->
+      <div class="placeholder-img">Bild folgt</div>
+    {{ end }}
+  </div>
+</div>

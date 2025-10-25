@@ -80,47 +80,210 @@
 .stats3-value { font-size:1.5rem; line-height:1.2; font-weight:800; letter-spacing:.2px; }
 .stats3-label { color:#374151; font-weight:600; text-transform:uppercase; font-size:.8rem; letter-spacing:.04em; }
 
+
+.accordion { display: grid; gap: .75rem; }
+.accordion-item { border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; }
+.accordion-summary { cursor: pointer; padding: .75rem 1rem; font-weight: 700; list-style: none; }
+.accordion-summary::-webkit-details-marker { display: none; }
+.accordion-panel { padding: .75rem 1rem 1rem; color: #374151; }
+.accordion-item[open] .accordion-summary { background: #f9fafb; }
+
+.map-embed { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; background:#f3f4f6; }
+.map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
+
+.slider {
+  position: relative;
+  overflow: hidden;
+  margin: 2rem 0;
+}
+.slides {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scrollbar-width: none; /* Firefox */
+}
+.slides::-webkit-scrollbar {
+  display: none; /* Chrome, Safari */
+}
+.slide {
+  flex: 0 0 100%;
+  scroll-snap-align: start;
+  background: #f8f8f8;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+}
+.slide h3 {
+  margin-top: 0;
+}
+.slider button.prev,
+.slider button.next {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.5);
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  border-radius: 50%;
+}
+.slider button.prev { left: 0.5rem; }
+.slider button.next { right: 0.5rem; }
+
+.boxtextimage {
+  display: flex;
+  align-items: flex-start;
+  gap: 3rem;          /* Abstand zwischen Bild und Text */
+  margin: 3rem 0;
+}
+
+.boxtextimage.left {
+  flex-direction: row;      /* Bild links, Text rechts */
+}
+
+.boxtextimage.right {
+  flex-direction: row-reverse; /* Bild rechts, Text links */
+}
+
+.boxtextimage__content {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.boxtextimage__image {
+  flex: 1 1 50%;
+  padding: 1rem;
+}
+
+.boxtextimage__image img,
+.boxtextimage__image .placeholder-img {
+  width: 100%;
+  height: auto;
+  display: block;
+  background: #f0f0f0;
+  padding: 2rem;
+  box-sizing: border-box;
+}
+
+
+
   </style>
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <body>
-  <header>
-    <div class="container" style="display:flex;align-items:center;justify-content:space-between;">
-      <a href="{{ .Site.Home.Permalink }}" class="logo">
-  <img src="{{ "logo.png" | relURL }}" style="max-width: 5em;" alt="JSG Hohe Warte Logo" class="h-8 w-auto">
-</a>
-      <nav>
-        {{/* Top-level sections excluding footer pages */}}
-        {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
-        {{ range .Site.Sections }}
-          {{ if not (in $exclude .Section) }}
-            <a href="{{ .RelPermalink }}" class="{{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}active{{ end }}{{ end }}">{{ .Title }}</a>
-          {{ end }}
-        {{ end }}
-      </nav>
-    </div>
-  </header>
+  <header class="bg-white shadow">
+  <div class="container mx-auto flex items-center justify-between p-4">
+    <!-- Logo -->
+    <a href="{{ .Site.Home.Permalink }}" class="logo">
+      <img src="{{ "logo.png" | relURL }}" alt="JSG Hohe Warte Logo" class="h-10 w-auto">
+    </a>
 
-  {{/* Subnav: children of current section */}}
-  {{ $current := .CurrentSection }}
-  {{ if and (not .IsHome) (.CurrentSection) }}
-    {{ $children := $current.Pages }}
-    {{ if gt (len $children) 0 }}
-      <div class="subnav">
-        <div class="container">
-          {{ range $children.ByTitle }}
-            <a href="{{ .RelPermalink }}" class="{{ if eq .RelPermalink $.RelPermalink }}active{{ end }}">{{ .Title }}</a>
-          {{ end }}
-        </div>
+    <!-- Desktop-Navigation -->
+    <nav class="hidden md:flex space-x-6">
+      {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+      {{ range .Site.Sections }}
+        {{ if not (in $exclude .Section) }}
+          <a href="{{ .RelPermalink }}"
+             class="hover:text-green-700 {{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}text-green-700 font-semibold{{ end }}{{ end }}">
+            {{ .Title }}
+          </a>
+        {{ end }}
+      {{ end }}
+    </nav>
+
+    <!-- Mobile Burger rechts -->
+    <button id="menuBtn" class="md:hidden text-3xl" aria-label="Menü öffnen">☰</button>
+  </div>
+</header>
+
+<!-- Mobile-Menü Overlay -->
+<div id="mobileMenu" class="fixed inset-0 bg-black/50 hidden z-50">
+  <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-lg p-6 overflow-y-auto">
+    <button id="closeBtn" class="mb-6 text-gray-600 text-xl" aria-label="Menü schließen">✕</button>
+
+    <nav class="flex flex-col space-y-3">
+  {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+  {{ $curr := .CurrentSection }}
+
+  {{ range .Site.Sections }}
+    {{ if not (in $exclude .Section) }}
+      {{/* aktiv, wenn wir gerade in dieser Section (oder einem Kind) sind */}}
+      {{ $isActive := and $curr (eq .RelPermalink $curr.RelPermalink) }}
+
+      <div>
+        <a href="{{ .RelPermalink }}"
+           class="block text-lg font-medium hover:text-green-700
+                  {{ if $isActive }}text-green-700 font-semibold{{ end }}">
+          {{ .Title }}
+        </a>
+
+        {{ if $isActive }}
+          {{/* Nur für die aktive Section: Unterseiten einblenden */}}
+          {{ $children := where .Pages "Kind" "page" }}
+          {{ $sorted := sort $children "Weight" "Title" }}
+
+          <ul class="mt-2 ml-3 space-y-2">
+            {{ range $p := $sorted }}
+              <li>
+                <a href="{{ $p.RelPermalink }}"
+                   class="block px-2 py-1 rounded hover:bg-gray-100
+                          {{ if eq $.RelPermalink $p.RelPermalink }}text-green-700 font-semibold{{ end }}">
+                  {{ $p.Title }}
+                </a>
+              </li>
+            {{ end }}
+          </ul>
+        {{ end }}
       </div>
     {{ end }}
   {{ end }}
+</nav>
 
-  <main class="container">
-    <article>
-      
-      {{ block "main" . }}{{ end }}
-    </article>
-  </main>
+    
+  </div>
+</div>
+
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const closeBtn = document.getElementById("closeBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+  menuBtn && (menuBtn.onclick = () => mobileMenu.classList.remove("hidden"));
+  closeBtn && (closeBtn.onclick = () => mobileMenu.classList.add("hidden"));
+
+  function toggleSubmenu(id) {
+    const ul = document.getElementById("submenu-" + id);
+    const arrow = document.getElementById("arrow-" + id);
+    if (!ul || !arrow) return;
+    ul.classList.toggle("hidden");
+    arrow.textContent = ul.classList.contains("hidden") ? "▸" : "▾";
+  }
+</script>
+
+<!-- Subnav -->
+{{ $current := .CurrentSection }}
+{{ if and (not .IsHome) ($current) }}
+  {{ $children := where $current.Pages "Kind" "page" }}
+  {{ $sorted := sort $children "Weight" "Title" }}
+  <div class="subnav bg-gray-100 border-t hidden md_flex"> <!-- nur mobil -->
+    <div class="container mx-auto flex space-x-4 p-2 overflow-x-auto">
+      {{ range $p := $sorted }}
+        <a href="{{ $p.RelPermalink }}"
+           class="whitespace-nowrap hover:text-green-700 {{ if eq .RelPermalink $.RelPermalink }}text-green-700 font-semibold{{ end }}">
+          {{ $p.Title }}
+        </a>
+      {{ end }}
+    </div>
+  </div>
+{{ end }}
+
+
+<main class="container mx-auto p-4">
+  <article>
+    {{ block "main" . }}{{ end }}
+  </article>
+</main>
 
   <footer>
     <div class="container muted">

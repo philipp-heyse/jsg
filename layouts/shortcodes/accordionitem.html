@@ -1,0 +1,13 @@
+{{- $title := .Get "title" | default "Titel" -}}
+{{- $open  := .Get "open"  | default "" -}}
+{{- $id    := .Get "id"    | default "" -}}
+{{- $isOpen := or (eq (lower $open) "true") (eq $open "1") -}}
+
+<details class="accordion-item" data-accordion-item {{ if $isOpen }}open{{ end }} {{ if $id }}id="{{ $id }}"{{ end }}>
+  <summary class="accordion-summary" data-accordion-summary>
+    <span class="accordion-title">{{ $title }}</span>
+  </summary>
+  <div class="accordion-panel" data-accordion-panel>
+    {{ .Inner | markdownify }}
+  </div>
+</details>

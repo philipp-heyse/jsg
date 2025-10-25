@@ -1,0 +1,15 @@
+<div class="boxlist-item">
+  {{ with .Get "title" }}
+    <h2 class="boxlist-title">{{ . }}</h2>
+  {{ end }}
+
+  <div class="boxlist-content">
+    {{ .Inner | markdownify }}
+  </div>
+
+  {{ with .Get "link" }}
+    <p class="boxlist-link">
+      <a href="{{ . }}">{{ if $.Get "linktext" }}{{ $.Get "linktext" }}{{ else }}Mehr erfahren{{ end }}</a>
+    </p>
+  {{ end }}
+</div>

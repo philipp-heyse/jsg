@@ -1,7 +1,7 @@
 {{- $title := .Get "title" -}}
 {{- $link  := .Get "link" -}}
 {{- $icon  := .Get "icon" | default "circle" -}}
-
+{{- $linktext := .Get "linktext" | default "Mehr&nbsp;→" -}}
 <article class="box3-item" role="listitem">
   <a class="box3-card" href="{{ $link }}">
     <span class="box3-icon" aria-hidden="true">
@@ -9,6 +9,6 @@
     </span>
     <h3 class="box3-title">{{ $title }}</h3>
     <p class="box3-text">{{ .Inner | markdownify }}</p>
-    <span class="box3-cta" aria-hidden="true">Mehr&nbsp;→</span>
+    <span class="box3-cta" aria-hidden="true">{{ $linktext }}</span>
   </a>
 </article>
