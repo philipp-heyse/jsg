@@ -1,299 +1,343 @@
 <!doctype html>
 <html lang="de">
+
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>{{ .Title }} | {{ .Site.Title }}</title>
   <link rel="icon" href="/favicon.ico">
-  <style>
-    :root { --w: 1100px; --muted:#667085; }
-    body { font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, sans-serif; margin:0; line-height:1.6; }
-    header, footer { border-bottom:1px solid #eee; }
-    footer { border-top:1px solid #eee; border-bottom:none; }
-    .container { max-width: var(--w); margin: 0 auto; padding: 1rem 1.25rem; }
-    nav a { text-decoration: none; margin-right: 1rem; color: #111; }
-    nav a.active { font-weight: 600; }
-    .subnav { border-bottom:1px solid #f0f0f0; background:#fafafa; }
-    .subnav a { margin-right:.75rem; font-size:.95rem; color:#333; text-decoration:none; }
-    .muted { color: var(--muted); }
-    main { min-height:60vh; }
-    article { max-width: 70ch; }
-    .box3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 1.25rem;
-}
-@media (max-width: 900px){ .box3 { grid-template-columns: 1fr; } }
-
-.box3-card {
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-  gap: .5rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  text-decoration: none;
-  color: inherit;
-  background: #fff;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.box3-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.06); border-color:#d1d5db; }
-
-.box3-icon svg { width: 28px; height: 28px; display:block; color:#111827; }
-.box3-title { margin: .25rem 0; font-weight: 700; font-size: 1.05rem; letter-spacing: .2px; }
-.box3-text { margin: 0; color:#374151; line-height: 1.55; }
-.box3-cta { margin-top:.5rem; font-weight:600; color:#111827; }
-
-.clubs3 {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0,1fr));
-  gap: 1.25rem;
-}
-@media (max-width: 900px){ .clubs3 { grid-template-columns: 1fr; } }
-
-.clubs3-card {
-  display: grid;
-  grid-template-rows: auto auto auto;
-  gap: .5rem;
-  padding: 1rem 1.25rem;
-  border: 1px solid #e5e7eb;
-  border-radius: 14px;
-  text-decoration: none;
-  color: inherit;
-  background: #fff;
-  transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
-}
-.clubs3-card:hover { transform: translateY(-2px); box-shadow: 0 6px 20px rgba(0,0,0,.06); border-color:#d1d5db; }
-
-.clubs3-logo svg { width: 40px; height: 40px; display:block; color:#111827; }
-.clubs3-logo img { width: 40px; height: 40px; object-fit: contain; display:block; }
-.clubs3-title { margin: .25rem 0; font-weight: 800; font-size: 1.05rem; }
-.clubs3-meta { margin: 0; color:#374151; }
-.clubs3-cta { margin-top:.25rem; font-weight:600; color:#111827; }
-
-.stats3 { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:1rem; }
-@media (max-width: 900px){ .stats3 { grid-template-columns:1fr; } }
-
-.stats3-link { text-decoration:none; color:inherit; }
-.stats3-card { display:grid; justify-items:center; gap:.25rem; padding:1rem; border:1px solid #e5e7eb; border-radius:14px; background:#fff; }
-.stats3-icon svg { width:28px; height:28px; display:block; color:#111827; }
-.stats3-value { font-size:1.5rem; line-height:1.2; font-weight:800; letter-spacing:.2px; }
-.stats3-label { color:#374151; font-weight:600; text-transform:uppercase; font-size:.8rem; letter-spacing:.04em; }
-
-
-.accordion { display: grid; gap: .75rem; }
-.accordion-item { border: 1px solid #e5e7eb; border-radius: 12px; background: #fff; }
-.accordion-summary { cursor: pointer; padding: .75rem 1rem; font-weight: 700; list-style: none; }
-.accordion-summary::-webkit-details-marker { display: none; }
-.accordion-panel { padding: .75rem 1rem 1rem; color: #374151; }
-.accordion-item[open] .accordion-summary { background: #f9fafb; }
-
-.map-embed { position: relative; width: 100%; padding-bottom: 56.25%; border-radius: 12px; overflow: hidden; background:#f3f4f6; }
-.map-embed iframe { position: absolute; inset: 0; width: 100%; height: 100%; border: 0; }
-
-.slider {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-.slides {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
-}
-.slides::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-.slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  background: #f8f8f8;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.slide h3 {
-  margin-top: 0;
-}
-.slider button.prev,
-.slider button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.slider button.prev { left: 0.5rem; }
-.slider button.next { right: 0.5rem; }
-
-.boxtextimage {
-  display: flex;
-  align-items: flex-start;
-  gap: 3rem;          /* Abstand zwischen Bild und Text */
-  margin: 3rem 0;
-}
-
-.boxtextimage.left {
-  flex-direction: row;      /* Bild links, Text rechts */
-}
-
-.boxtextimage.right {
-  flex-direction: row-reverse; /* Bild rechts, Text links */
-}
-
-.boxtextimage__content {
-  flex: 1 1 50%;
-  padding: 1rem;
-}
-
-.boxtextimage__image {
-  flex: 1 1 50%;
-  padding: 1rem;
-}
-
-.boxtextimage__image img,
-.boxtextimage__image .placeholder-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  background: #f0f0f0;
-  padding: 2rem;
-  box-sizing: border-box;
-}
-
-
-
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          colors: {
+            primary: '#1f2937',      // dark grey text
+            background: '#f9fafb',   // very light grey background
+            accent: {
+              blue: '#2563eb',       // blue-600
+              red: '#dc2626',        // red-600
+            },
+            'accent-hover': {
+              blue: '#1d4ed8',       // blue-700
+              red: '#b91c1c',        // red-700
+            },
+            muted: '#6b7280',        // grey-500 for muted text
+          },
+          fontFamily: {
+            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+          },
+          maxWidth: {
+            'container': '1100px',
+          }
+        }
+      }
+    }
+  </script>
+  <style type="text/tailwindcss">
+    @layer base {
+      /* Typography - Headings */
+      article h1 {
+        @apply text-3xl sm:text-4xl font-bold text-primary mb-6 mt-8 leading-tight;
+      }
+      
+      article h2 {
+        @apply text-2xl sm:text-3xl font-bold text-primary mb-4 mt-8 leading-tight;
+      }
+      
+      article h3 {
+        @apply text-xl sm:text-2xl font-semibold text-primary mb-3 mt-6 leading-snug;
+      }
+      
+      article h4 {
+        @apply text-lg sm:text-xl font-semibold text-primary mb-3 mt-5 leading-snug;
+      }
+      
+      article h5 {
+        @apply text-base sm:text-lg font-semibold text-primary mb-2 mt-4;
+      }
+      
+      article h6 {
+        @apply text-base font-semibold text-primary mb-2 mt-4;
+      }
+      
+      /* First heading has no top margin */
+      article > h1:first-child,
+      article > h2:first-child,
+      article > h3:first-child,
+      article > h4:first-child,
+      article > h5:first-child,
+      article > h6:first-child {
+        @apply mt-0;
+      }
+      
+      /* Typography - Paragraphs */
+      article p {
+        @apply text-base text-gray-700 mb-4 leading-relaxed;
+      }
+      
+      article p strong {
+        @apply font-semibold text-primary;
+      }
+      
+      article p em {
+        @apply italic;
+      }
+      
+      /* Typography - Links */
+      article a {
+        @apply text-accent-blue hover:text-accent-hover-blue underline transition-colors;
+      }
+      
+      /* Typography - Lists */
+      article ul {
+        @apply list-disc list-outside ml-6 mb-4 space-y-2;
+      }
+      
+      article ol {
+        @apply list-decimal list-outside ml-6 mb-4 space-y-2;
+      }
+      
+      article li {
+        @apply text-base text-gray-700 leading-relaxed;
+      }
+      
+      article li > ul,
+      article li > ol {
+        @apply mt-2 mb-2;
+      }
+      
+      /* Typography - Blockquotes */
+      article blockquote {
+        @apply border-l-4 border-accent-blue pl-4 py-2 mb-4 italic text-gray-600;
+      }
+      
+      /* Typography - Code */
+      article code {
+        @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-accent-red;
+      }
+      
+      article pre {
+        @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
+      }
+      
+      article pre code {
+        @apply bg-transparent p-0 text-sm;
+      }
+      
+      /* Typography - Horizontal Rules */
+      article hr {
+        @apply border-0 border-t border-gray-200 my-8;
+      }
+      
+      /* Typography - Tables */
+      article table {
+        @apply w-full mb-4 border-collapse;
+      }
+      
+      article th {
+        @apply bg-gray-50 px-4 py-2 text-left font-semibold text-primary border-b-2 border-gray-200;
+      }
+      
+      article td {
+        @apply px-4 py-2 border-b border-gray-200 text-gray-700;
+      }
+      
+      article tr:last-child td {
+        @apply border-b-0;
+      }
+      
+      /* Typography - Images */
+      article img {
+        @apply rounded-lg mb-4 max-w-full h-auto;
+      }
+    }
+    
+    /* Prevent body scroll when mobile menu is open */
+    body.menu-open {
+      overflow: hidden;
+    }
   </style>
-    <script src="https://cdn.tailwindcss.com"></script>
 </head>
-<body>
-  <header class="bg-white shadow">
-  <div class="container mx-auto flex items-center justify-between p-4">
-    <!-- Logo -->
-    <a href="{{ .Site.Home.Permalink }}" class="logo">
-      <img src="{{ "logo.png" | relURL }}" alt="JSG Hohe Warte Logo" class="h-10 w-auto">
-    </a>
 
-    <!-- Desktop-Navigation -->
-    <nav class="hidden md:flex space-x-6">
-      {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
-      {{ range .Site.Sections }}
-        {{ if not (in $exclude .Section) }}
+<body class="bg-background text-primary antialiased">
+  <!-- Header -->
+  <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center justify-between h-16">
+        <!-- Logo -->
+        <a href="{{ .Site.Home.Permalink }}" class="flex-shrink-0 transition-opacity hover:opacity-80">
+          <img src="{{ "logo.png" | relURL }}" alt="JSG Hohe Warte Logo" class="h-10 w-auto">
+        </a>
+
+        <!-- Desktop Navigation -->
+        <nav class="hidden md:flex items-center space-x-8">
+          {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+          {{ range .Site.Sections }}
+          {{ if not (in $exclude .Section) }}
           <a href="{{ .RelPermalink }}"
-             class="hover:text-green-700 {{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}text-green-700 font-semibold{{ end }}{{ end }}">
+            class="text-sm font-medium transition-colors hover:text-accent-blue {{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}text-accent-blue font-semibold{{ else }}text-primary{{ end }}{{ else }}text-primary{{ end }}">
             {{ .Title }}
           </a>
-        {{ end }}
-      {{ end }}
-    </nav>
+          {{ end }}
+          {{ end }}
+        </nav>
 
-    <!-- Mobile Burger rechts -->
-    <button id="menuBtn" class="md:hidden text-3xl" aria-label="Menü öffnen">☰</button>
-  </div>
-</header>
+        <!-- Mobile Menu Button -->
+        <button id="menuBtn" class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors"
+          aria-label="Menü öffnen" aria-expanded="false">
+          <svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
 
-<!-- Mobile-Menü Overlay -->
-<div id="mobileMenu" class="fixed inset-0 bg-black/50 hidden z-50">
-  <div class="absolute right-0 top-0 h-full w-72 bg-white shadow-lg p-6 overflow-y-auto">
-    <button id="closeBtn" class="mb-6 text-gray-600 text-xl" aria-label="Menü schließen">✕</button>
+  <!-- Mobile Menu Overlay -->
+  <div id="mobileMenu" class="fixed inset-0 bg-black/50 hidden z-50 md:hidden transition-opacity">
+    <div id="mobileMenuPanel"
+      class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full">
+      <div class="flex flex-col h-full">
+        <!-- Mobile Menu Header -->
+        <div class="flex items-center justify-between p-4 border-b border-gray-200">
+          <span class="text-lg font-semibold text-primary">Menü</span>
+          <button id="closeBtn" class="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Menü schließen">
+            <svg class="w-6 h-6 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+            </svg>
+          </button>
+        </div>
 
-    <nav class="flex flex-col space-y-3">
-  {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
-  {{ $curr := .CurrentSection }}
+        <!-- Mobile Menu Content -->
+        <nav class="flex-1 overflow-y-auto p-4">
+          <div class="space-y-1">
+            {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+            {{ $curr := .CurrentSection }}
 
-  {{ range .Site.Sections }}
-    {{ if not (in $exclude .Section) }}
-      {{/* aktiv, wenn wir gerade in dieser Section (oder einem Kind) sind */}}
-      {{ $isActive := and $curr (eq .RelPermalink $curr.RelPermalink) }}
+            {{ range .Site.Sections }}
+            {{ if not (in $exclude .Section) }}
+            {{ $isActive := and $curr (eq .RelPermalink $curr.RelPermalink) }}
 
-      <div>
-        <a href="{{ .RelPermalink }}"
-           class="block text-lg font-medium hover:text-green-700
-                  {{ if $isActive }}text-green-700 font-semibold{{ end }}">
-          {{ .Title }}
-        </a>
+            <div class="space-y-1">
+              <a href="{{ .RelPermalink }}"
+                class="block px-3 py-2 rounded-lg text-base font-medium transition-colors {{ if $isActive }}bg-accent-blue/10 text-accent-blue{{ else }}text-primary hover:bg-gray-100{{ end }}">
+                {{ .Title }}
+              </a>
 
-        {{ if $isActive }}
-          {{/* Nur für die aktive Section: Unterseiten einblenden */}}
-          {{ $children := where .Pages "Kind" "page" }}
-          {{ $sorted := sort $children "Weight" "Title" }}
-
-          <ul class="mt-2 ml-3 space-y-2">
-            {{ range $p := $sorted }}
-              <li>
+              {{ if $isActive }}
+              {{ $children := where .Pages "Kind" "page" }}
+              {{ $sorted := sort $children "Weight" "Title" }}
+              {{ if $sorted }}
+              <div class="ml-3 space-y-1 mt-1">
+                {{ range $p := $sorted }}
                 <a href="{{ $p.RelPermalink }}"
-                   class="block px-2 py-1 rounded hover:bg-gray-100
-                          {{ if eq $.RelPermalink $p.RelPermalink }}text-green-700 font-semibold{{ end }}">
+                  class="block px-3 py-2 rounded-lg text-sm transition-colors {{ if eq $.RelPermalink $p.RelPermalink }}bg-accent-blue/10 text-accent-blue font-medium{{ else }}text-muted hover:bg-gray-100 hover:text-primary{{ end }}">
                   {{ $p.Title }}
                 </a>
-              </li>
+                {{ end }}
+              </div>
+              {{ end }}
+              {{ end }}
+            </div>
             {{ end }}
-          </ul>
-        {{ end }}
+            {{ end }}
+          </div>
+        </nav>
       </div>
-    {{ end }}
-  {{ end }}
-</nav>
-
-    
+    </div>
   </div>
-</div>
 
-<script>
-  const menuBtn = document.getElementById("menuBtn");
-  const closeBtn = document.getElementById("closeBtn");
-  const mobileMenu = document.getElementById("mobileMenu");
-  menuBtn && (menuBtn.onclick = () => mobileMenu.classList.remove("hidden"));
-  closeBtn && (closeBtn.onclick = () => mobileMenu.classList.add("hidden"));
-
-  function toggleSubmenu(id) {
-    const ul = document.getElementById("submenu-" + id);
-    const arrow = document.getElementById("arrow-" + id);
-    if (!ul || !arrow) return;
-    ul.classList.toggle("hidden");
-    arrow.textContent = ul.classList.contains("hidden") ? "▸" : "▾";
-  }
-</script>
-
-<!-- Subnav -->
-{{ $current := .CurrentSection }}
-{{ if and (not .IsHome) ($current) }}
+  <!-- Subnav (Desktop only) -->
+  {{ $current := .CurrentSection }}
+  {{ if and (not .IsHome) ($current) }}
   {{ $children := where $current.Pages "Kind" "page" }}
   {{ $sorted := sort $children "Weight" "Title" }}
-  <div class="subnav bg-gray-100 border-t hidden md_flex"> <!-- nur mobil -->
-    <div class="container mx-auto flex space-x-4 p-2 overflow-x-auto">
-      {{ range $p := $sorted }}
+  {{ if $sorted }}
+  <div class="hidden md:block bg-gray-50 border-b border-gray-200">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
+      <div class="flex items-center space-x-6 py-3 overflow-x-auto">
+        {{ range $p := $sorted }}
         <a href="{{ $p.RelPermalink }}"
-           class="whitespace-nowrap hover:text-green-700 {{ if eq .RelPermalink $.RelPermalink }}text-green-700 font-semibold{{ end }}">
+          class="text-sm font-medium whitespace-nowrap transition-colors {{ if eq .RelPermalink $.RelPermalink }}text-accent-red{{ else }}text-muted hover:text-primary{{ end }}">
           {{ $p.Title }}
         </a>
-      {{ end }}
+        {{ end }}
+      </div>
     </div>
   </div>
-{{ end }}
+  {{ end }}
+  {{ end }}
 
+  <!-- Main Content -->
+  <main class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[60vh]">
+    <article>
+      {{ block "main" . }}{{ end }}
+    </article>
+  </main>
 
-<main class="container mx-auto p-4">
-  <article>
-    {{ block "main" . }}{{ end }}
-  </article>
-</main>
-
-  <footer>
-    <div class="container muted">
-      © {{ now.Year }} · Built with Hugo · 2-level menu from folders<br>
-      <a href="/impressum/">Impressum</a> · 
-      <a href="/kontakt/">Kontakt</a> · 
-      <a href="/datenschutz/">Datenschutz</a> · 
-      <a href="https://facebook.com" target="_blank" rel="noopener">Facebook</a> · 
-      <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+  <!-- Footer -->
+  <footer class="bg-white border-t border-gray-200 mt-16">
+    <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8">
+      <div class="text-sm text-muted space-y-4">
+        <p>© {{ now.Year }} JSG Hohe Warte · Built with Hugo</p>
+        <div class="flex flex-wrap gap-x-4 gap-y-2">
+          <a href="/impressum/" class="hover:text-accent-blue transition-colors">Impressum</a>
+          <a href="/kontakt/" class="hover:text-accent-blue transition-colors">Kontakt</a>
+          <a href="/datenschutz/" class="hover:text-accent-blue transition-colors">Datenschutz</a>
+          <a href="https://facebook.com" target="_blank" rel="noopener"
+            class="hover:text-accent-blue transition-colors">Facebook</a>
+          <a href="https://instagram.com" target="_blank" rel="noopener"
+            class="hover:text-accent-blue transition-colors">Instagram</a>
+        </div>
+      </div>
     </div>
   </footer>
+
+  <!-- Scripts -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const closeBtn = document.getElementById("closeBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    const mobileMenuPanel = document.getElementById("mobileMenuPanel");
+    const body = document.body;
+
+    function openMenu() {
+      mobileMenu.classList.remove("hidden");
+      body.classList.add("menu-open");
+      // Trigger reflow to enable transition
+      mobileMenuPanel.offsetHeight;
+      mobileMenuPanel.classList.remove("translate-x-full");
+      menuBtn.setAttribute("aria-expanded", "true");
+    }
+
+    function closeMenu() {
+      mobileMenuPanel.classList.add("translate-x-full");
+      menuBtn.setAttribute("aria-expanded", "false");
+      setTimeout(() => {
+        mobileMenu.classList.add("hidden");
+        body.classList.remove("menu-open");
+      }, 300);
+    }
+
+    menuBtn && (menuBtn.onclick = openMenu);
+    closeBtn && (closeBtn.onclick = closeMenu);
+
+    // Close menu when clicking overlay
+    mobileMenu && (mobileMenu.onclick = (e) => {
+      if (e.target === mobileMenu) closeMenu();
+    });
+
+    // Close menu on escape key
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+        closeMenu();
+      }
+    });
+  </script>
 </body>
+
 </html>

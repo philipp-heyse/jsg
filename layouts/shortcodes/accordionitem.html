@@ -1,13 +1,14 @@
 {{- $title := .Get "title" | default "Titel" -}}
-{{- $open  := .Get "open"  | default "" -}}
-{{- $id    := .Get "id"    | default "" -}}
+{{- $open := .Get "open" | default "" -}}
+{{- $id := .Get "id" | default "" -}}
 {{- $isOpen := or (eq (lower $open) "true") (eq $open "1") -}}
 
-<details class="accordion-item" data-accordion-item {{ if $isOpen }}open{{ end }} {{ if $id }}id="{{ $id }}"{{ end }}>
-  <summary class="accordion-summary" data-accordion-summary>
-    <span class="accordion-title">{{ $title }}</span>
+<details class="border border-gray-200 rounded-xl bg-white" data-accordion-item {{ if $isOpen }}open{{ end }} {{ if $id
+  }}id="{{ $id }}" {{ end }}>
+  <summary class="cursor-pointer p-3 sm:p-4 font-bold list-none hover:bg-gray-50" data-accordion-summary>
+    <span>{{ $title }}</span>
   </summary>
-  <div class="accordion-panel" data-accordion-panel>
+  <div class="px-3 sm:px-4 pb-3 sm:pb-4 text-gray-700" data-accordion-panel>
     {{ .Inner | markdownify }}
   </div>
 </details>

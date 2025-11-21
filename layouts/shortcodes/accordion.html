@@ -1,9 +1,9 @@
-{{/* Wrapper für ein Akkordeon. 
-     Usage:
-       {{< accordion >}}
-         {{< accordionitem title="..." >}}Inhalt{{< /accordionitem >}}
-       {{< /accordion >}}
-*/}}
-<div class="accordion" data-accordion>
-  {{ .Inner }}
-</div>
+{{/* Wrapper für ein Akkordeon.
+Usage:
+{{< accordion>}}
+  {{< accordionitem title="...">}}Inhalt{{< /accordionitem>}}
+      {{< /accordion>}}
+        */}}
+        <div class="grid gap-3" data-accordion>
+          {{ .Inner }}
+        </div>

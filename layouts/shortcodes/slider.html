@@ -1,50 +1,36 @@
-<div class="slider">
-  <div class="slides">
+<div class="relative overflow-hidden my-8">
+  <div class="flex gap-4 overflow-x-auto snap-x snap-mandatory scrollbar-hide">
     {{ .Inner | safeHTML }}
   </div>
-  <button class="prev" onclick="this.parentElement.querySelector('.slides').scrollBy({left: -300, behavior: 'smooth'})">‹</button>
-  <button class="next" onclick="this.parentElement.querySelector('.slides').scrollBy({left: 300, behavior: 'smooth'})">›</button>
+  <button
+    class="absolute top-1/2 left-2 -translate-y-1/2 bg-black/50 text-white border-0 px-4 py-2 cursor-pointer rounded-full hover:bg-black/70 transition-colors"
+    onclick="this.parentElement.querySelector('.overflow-x-auto').scrollBy({left: -300, behavior: 'smooth'})">‹</button>
+  <button
+    class="absolute top-1/2 right-2 -translate-y-1/2 bg-black/50 text-white border-0 px-4 py-2 cursor-pointer rounded-full hover:bg-black/70 transition-colors"
+    onclick="this.parentElement.querySelector('.overflow-x-auto').scrollBy({left: 300, behavior: 'smooth'})">›</button>
 </div>
 
 <style>
-.slider {
-  position: relative;
-  overflow: hidden;
-  margin: 2rem 0;
-}
-.slides {
-  display: flex;
-  gap: 1rem;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scrollbar-width: none; /* Firefox */
-}
-.slides::-webkit-scrollbar {
-  display: none; /* Chrome, Safari */
-}
-.slide {
-  flex: 0 0 100%;
-  scroll-snap-align: start;
-  background: #f8f8f8;
-  padding: 1rem;
-  border-radius: 0.5rem;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.1);
-}
-.slide h3 {
-  margin-top: 0;
-}
-.slider button.prev,
-.slider button.next {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.5);
-  color: white;
-  border: none;
-  padding: 0.5rem 1rem;
-  cursor: pointer;
-  border-radius: 50%;
-}
-.slider button.prev { left: 0.5rem; }
-.slider button.next { right: 0.5rem; }
+  .scrollbar-hide {
+    scrollbar-width: none;
+    /* Firefox */
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari */
+  }
+
+  .slide {
+    flex: 0 0 100%;
+    scroll-snap-align: start;
+    background: #f8f8f8;
+    padding: 1rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  .slide h3 {
+    margin-top: 0;
+  }
 </style>

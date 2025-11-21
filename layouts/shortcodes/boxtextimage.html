@@ -1,20 +1,22 @@
-<div class="boxtextimage {{ .Get "position" }}">
-  <div class="boxtextimage__content">
-    <h3>{{ .Get "title" }}</h3>
-    <div class="boxtextimage__text">
+<div class="flex flex-col md:flex-{{ if eq (.Get " position") "right" }}row-reverse{{ else }}row{{ end }} items-start
+  gap-8 my-12">
+  <div class="flex-1 p-4">
+    <h3 class="text-xl sm:text-2xl font-bold mb-4">{{ .Get "title" }}</h3>
+    <div class="text-gray-700 leading-relaxed">
       {{ .Inner | markdownify }}
     </div>
     {{ with .Get "link" }}
-      <p><a href="{{ . }}" class="boxtextimage__link">Mehr erfahren →</a></p>
+    <p class="mt-4"><a href="{{ . }}"
+        class="text-accent-blue hover:text-accent-hover-blue font-semibold transition-colors">Mehr erfahren →</a></p>
     {{ end }}
   </div>
 
-  <div class="boxtextimage__image">
+  <div class="flex-1 p-4">
     {{ with .Get "image" }}
-      <img src="{{ . }}" alt="{{ $.Get "title" }}">
+    <img src="{{ . }}" alt="{{ $.Get " title" }}" class="w-full h-auto block rounded-lg">
     {{ else }}
-      <!-- Platzhalterbild -->
-      <div class="placeholder-img">Bild folgt</div>
+    <!-- Platzhalterbild -->
+    <div class="w-full bg-gray-100 p-8 text-center text-gray-500 rounded-lg">Bild folgt</div>
     {{ end }}
   </div>
 </div>

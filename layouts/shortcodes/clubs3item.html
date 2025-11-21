@@ -1,42 +1,45 @@
-{{- $title       := .Get "title" -}}
-{{- $link        := .Get "link" -}}           {{/* externer Link zur Vereinsseite */}}
-{{- $members     := .Get "members" -}}        {{/* z.B. "ca. 1.250" */}}
-{{- $departments := .Get "departments" -}}    {{/* z.B. "Fußball, Handball, ..." */}}
-{{- $logo        := .Get "logo" -}}           {{/* Dateiname in assets/logos/… (SVG/PNG) oder Pfad unter static/… */}}
+{{- $title := .Get "title" -}}
+{{- $link := .Get "link" -}} {{/* externer Link zur Vereinsseite */}}
+{{- $members := .Get "members" -}} {{/* z.B. "ca. 1.250" */}}
+{{- $departments := .Get "departments" -}} {{/* z.B. "Fußball, Handball, ..." */}}
+{{- $logo := .Get "logo" -}} {{/* Dateiname in assets/logos/… (SVG/PNG) oder Pfad unter static/… */}}
 
-<article class="clubs3-item" role="listitem">
-  <a class="clubs3-card" href="{{ $link }}" target="_blank" rel="noopener">
-    <span class="clubs3-logo" aria-hidden="true">
+<article role="listitem" class="h-full">
+  <a class="h-full grid grid-rows-[auto_auto_1fr_auto] gap-2 p-4 sm:p-5 border border-gray-200 rounded-xl no-underline text-inherit bg-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:border-gray-300"
+    href="{{ $link }}" target="_blank" rel="noopener">
+    <span class="w-10 h-10" aria-hidden="true">
       {{- if $logo -}}
-        {{- $try := resources.Get (printf "logos/%s" $logo) -}}
-        {{- if $try -}}
-          {{- /* Inline-SVG bevorzugen (färbbar via CSS); PNG/JPG werden als <img> ausgegeben */ -}}
-          {{- if eq (lower (path.Ext $try.Name)) ".svg" -}}
-            {{ $try.Content | safeHTML }}
-          {{- else -}}
-            <img src="{{ $try.RelPermalink }}" alt="{{ $title }} Logo" />
-          {{- end -}}
-        {{- else -}}
-          {{- /* Fallback: wenn $logo kein Asset ist, als (statischer) Pfad rendern */ -}}
-          <img src="{{ $logo | relURL }}" alt="{{ $title }} Logo" />
-        {{- end -}}
+      {{- $try := resources.Get (printf "logos/%s" $logo) -}}
+      {{- if $try -}}
+      {{- /* Inline-SVG bevorzugen (färbbar via CSS); PNG/JPG werden als <img> ausgegeben */ -}}
+      {{- if eq (lower (path.Ext $try.Name)) ".svg" -}}
+      {{ $try.Content | safeHTML }}
+      {{- else -}}
+      <img src="{{ $try.RelPermalink }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
+      {{- end -}}
+      {{- else -}}
+      {{- /* Fallback: wenn $logo kein Asset ist, als (statischer) Pfad rendern */ -}}
+      <img src="{{ $logo | relURL }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
+      {{- end -}}
       {{- end -}}
     </span>
 
-    <h3 class="clubs3-title">{{ $title }}</h3>
+    <h3 class="my-1 font-extrabold text-base sm:text-lg">{{ $title }}</h3>
 
-    {{- if or $members $departments -}}
-      <p class="clubs3-meta">
+    <div>
+      {{- if or $members $departments -}}
+      <p class="m-0 text-gray-700 text-sm">
         {{- with $members -}}Mitglieder: {{ . }}{{ end -}}
         {{- if and $members $departments -}} · {{ end -}}
         {{- with $departments -}}Abteilungen: {{ . }}{{ end -}}
       </p>
-    {{- end -}}
+      {{- end -}}
 
-    {{- with .Inner -}}
-      <p class="clubs3-text">{{ . | markdownify }}</p>
-    {{- end -}}
+      {{- with .Inner -}}
+      <p class="text-gray-700 text-sm">{{ . | markdownify }}</p>
+      {{- end -}}
+    </div>
 
-    <span class="clubs3-cta" aria-hidden="true">Zum&nbsp;Stammverein&nbsp;→</span>
+    <span class="mt-1 font-semibold text-primary text-sm" aria-hidden="true">Zum Stammverein →</span>
   </a>
 </article>

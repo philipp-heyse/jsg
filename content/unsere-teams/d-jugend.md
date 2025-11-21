@@ -47,4 +47,6 @@ Kinder fördern.
 
 ---
 
-← [E-Junioren]({{< relref "e-jugend.md" >}})
+<div style="display: flex; justify-content: flex-start;">
+  <a href="{{< relref "e-jugend.md" >}}">← E-Junioren</a>
+</div>

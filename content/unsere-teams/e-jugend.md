@@ -41,4 +41,7 @@ Verlieren.
 
 ---
 
-← [F-Junioren]({{ < relref "f-jugend.md" > }}) | [D-Junioren]({{ < relref "d-jugend.md" > }}) →
+<div style="display: flex; justify-content: space-between;">
+  <a href="{{< relref "f-jugend.md" >}}">← F-Junioren</a>
+  <a href="{{< relref "d-jugend.md" >}}">D-Junioren →</a>
+</div>

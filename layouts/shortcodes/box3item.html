@@ -1,14 +1,15 @@
 {{- $title := .Get "title" -}}
-{{- $link  := .Get "link" -}}
-{{- $icon  := .Get "icon" | default "circle" -}}
-{{- $linktext := .Get "linktext" | default "Mehr&nbsp;→" -}}
-<article class="box3-item" role="listitem">
-  <a class="box3-card" href="{{ $link }}">
-    <span class="box3-icon" aria-hidden="true">
+{{- $link := .Get "link" -}}
+{{- $icon := .Get "icon" | default "circle" -}}
+{{- $linktext := .Get "linktext" -}}
+<article role="listitem" class="h-full">
+  <a class="h-full grid grid-rows-[auto_auto_1fr_auto] gap-2 p-4 sm:p-5 border border-gray-200 rounded-xl no-underline text-inherit bg-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:border-gray-300"
+    href="{{ $link }}">
+    <span class="w-7 h-7 text-primary" aria-hidden="true">
       {{ with resources.Get (printf "icons/%s.svg" $icon) }}{{ .Content | safeHTML }}{{ end }}
     </span>
-    <h3 class="box3-title">{{ $title }}</h3>
-    <p class="box3-text">{{ .Inner | markdownify }}</p>
-    <span class="box3-cta" aria-hidden="true">{{ $linktext }}</span>
+    <h3 class="my-1 font-bold text-base sm:text-lg tracking-tight">{{ $title }}</h3>
+    <p class="m-0 text-gray-700 leading-relaxed text-sm sm:text-base">{{ .Inner | markdownify }}</p>
+    <span class="mt-2 font-semibold text-primary text-sm" aria-hidden="true">{{ if $linktext }}{{ $linktext | safeHTML }}{{ else }}Mehr →{{ end }}</span>
   </a>
 </article>

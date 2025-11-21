@@ -7,8 +7,6 @@ toc: false
 
 ---
 
-## Fußball mit Freunden
-
 Was macht uns eigentlich aus? Der Spaß am Fußballspielen? Definitiv.  
 Tore zu schießen wie CR7 – oder die Bude zu verteidigen wie HW4? Ganz klar.  
 Doch wir sind der Meinung, dass es noch um viel mehr geht:
@@ -26,7 +24,7 @@ Deshalb haben wir uns mit unseren Stammvereinen **Garbenteich, Hausen und Annero
 
 {{< stats3 >}}
   {{< stats3item icon="presentation"  value="2021" label="Gründung" >}}
-  {{< stats3item icon="group"   value="XX"   label="Teams"    href="unsere-teams" >}}
+  {{< stats3item icon="group"   value="10"   label="Teams"    href="unsere-teams" >}}
   {{< stats3item icon="stadium" value="3"    label="Stadien"  href="training-spiel/trainingsorte" >}}
 {{< /stats3 >}}
 

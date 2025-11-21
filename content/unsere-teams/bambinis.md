@@ -34,4 +34,6 @@ die Kinder am Ende jeden Trainings oder Spiels immer mit einem Lächeln vom Plat
 
 ---
 
-[→ F-Junioren]({{< relref "f-jugend.md" >}})
+<div style="display: flex; justify-content: flex-end;">
+  <a href="{{< relref "f-jugend.md" >}}">F-Junioren →</a>
+</div>

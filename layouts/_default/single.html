@@ -1,9 +1,4 @@
 {{ define "main" }}
-
 <h1>{{ .Title }}</h1>
-  <div class="container grid gap-8 md:grid-cols-[280px_minmax(0,1fr)]">
-    <article class="content">
-      {{ .Content }}
-    </article>
-  </div>
+{{ .Content }}
 {{ end }}
