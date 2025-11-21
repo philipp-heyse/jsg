@@ -11,4 +11,4 @@ Ob in der Nordkurve im Stadion „Auf der Platte“, der Schulbank in Watzenborn
 Lieblingsitaliener in Hausen oder im Badezimmer Deiner Garbenteicher Homezone: Jetzt kannst Du
 die Liebe zu Deinem wahren Herzensverein allen zeigen.
 
-[Unser Fanshop](https://www.printline-giessen.de/JSGHoheWarte/Fanshop/)
+[Unser Fanshop](https://www.printline-giessen.de/JSGHoheWarte/Fanshop/fanartikel/)
