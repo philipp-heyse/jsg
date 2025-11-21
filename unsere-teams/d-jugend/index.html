@@ -1,9 +1,170 @@
-<!doctype html><html lang=de><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>D-Jugend | Hugo Two-Level Menu</title><link rel=icon href=/favicon.ico><style>:root{--w:1100px;--muted:#667085}body{font-family:ui-sans-serif,system-ui,-apple-system,Segoe UI,Roboto,sans-serif;margin:0;line-height:1.6}header,footer{border-bottom:1px solid #eee}footer{border-top:1px solid #eee;border-bottom:none}.container{max-width:var(--w);margin:0 auto;padding:1rem 1.25rem}nav a{text-decoration:none;margin-right:1rem;color:#111}nav a.active{font-weight:600}.subnav{border-bottom:1px solid #f0f0f0;background:#fafafa}.subnav a{margin-right:.75rem;font-size:.95rem;color:#333;text-decoration:none}.muted{color:var(--muted)}main{min-height:60vh}article{max-width:70ch}.box3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}@media(max-width:900px){.box3{grid-template-columns:1fr}}.box3-card{display:grid;grid-template-rows:auto auto 1fr auto;gap:.5rem;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:14px;text-decoration:none;color:inherit;background:#fff;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}.box3-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,6%);border-color:#d1d5db}.box3-icon svg{width:28px;height:28px;display:block;color:#111827}.box3-title{margin:.25rem 0;font-weight:700;font-size:1.05rem;letter-spacing:.2px}.box3-text{margin:0;color:#374151;line-height:1.55}.box3-cta{margin-top:.5rem;font-weight:600;color:#111827}.clubs3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1.25rem}@media(max-width:900px){.clubs3{grid-template-columns:1fr}}.clubs3-card{display:grid;grid-template-rows:auto auto auto;gap:.5rem;padding:1rem 1.25rem;border:1px solid #e5e7eb;border-radius:14px;text-decoration:none;color:inherit;background:#fff;transition:transform .15s ease,box-shadow .15s ease,border-color .15s ease}.clubs3-card:hover{transform:translateY(-2px);box-shadow:0 6px 20px rgba(0,0,0,6%);border-color:#d1d5db}.clubs3-logo svg{width:40px;height:40px;display:block;color:#111827}.clubs3-logo img{width:40px;height:40px;object-fit:contain;display:block}.clubs3-title{margin:.25rem 0;font-weight:800;font-size:1.05rem}.clubs3-meta{margin:0;color:#374151}.clubs3-cta{margin-top:.25rem;font-weight:600;color:#111827}.stats3{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1rem}@media(max-width:900px){.stats3{grid-template-columns:1fr}}.stats3-link{text-decoration:none;color:inherit}.stats3-card{display:grid;justify-items:center;gap:.25rem;padding:1rem;border:1px solid #e5e7eb;border-radius:14px;background:#fff}.stats3-icon svg{width:28px;height:28px;display:block;color:#111827}.stats3-value{font-size:1.5rem;line-height:1.2;font-weight:800;letter-spacing:.2px}.stats3-label{color:#374151;font-weight:600;text-transform:uppercase;font-size:.8rem;letter-spacing:.04em}</style></head><body><header><div class=container style=display:flex;align-items:center;justify-content:space-between><a href=https://philipp-heyse.github.io/jsg/ class=logo><img src=/jsg/logo.png style=max-width:5em alt="JSG Hohe Warte Logo" class="h-8 w-auto"></a><nav><a href=/jsg/jsg-hohe-warte/>JSG Hohe Warte</a>
-<a href=/jsg/sponsoren/>Sponsoren</a>
-<a href=/jsg/training-spiel/>Training & Spiel</a>
-<a href=/jsg/unser-konzept/>Unser Konzept</a>
-<a href=/jsg/unsere-teams/>Unsere Teams</a></nav></div></header><main class=container><article><aside class=sidebar><nav class=section-nav aria-label=D-Jugend><h2 class=section-nav__title><a href=/jsg/unsere-teams/d-jugend/>D-Jugend</a></h2><ul class=section-nav__list></ul></nav></aside><h1>D-Jugend</h1><article class=content><h1 id=unsere-teams--d-jugend>Unsere Teams → D-Jugend</h1><p>Inhalt für <strong>D-Jugend</strong>.</p></article></article></main><footer><div class="container muted">© 2025 · Built with Hugo · 2-level menu from folders<br><a href=/impressum/>Impressum</a> ·
-<a href=/kontakt/>Kontakt</a> ·
-<a href=/datenschutz/>Datenschutz</a> ·
-<a href=https://facebook.com target=_blank rel=noopener>Facebook</a> ·
-<a href=https://instagram.com target=_blank rel=noopener>Instagram</a></div></footer></body></html>
+<!doctype html><html lang=de><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>D-Jugend | Hugo Two-Level Menu</title><link rel=icon href=/favicon.ico><link rel=preconnect href=https://fonts.googleapis.com><link rel=preconnect href=https://fonts.gstatic.com crossorigin><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel=stylesheet><script src=https://cdn.tailwindcss.com></script><script>tailwind.config={theme:{extend:{colors:{primary:"#1f2937",background:"#f9fafb",accent:{blue:"#2563eb",red:"#dc2626"},"accent-hover":{blue:"#1d4ed8",red:"#b91c1c"},muted:"#6b7280"},fontFamily:{sans:["Inter","ui-sans-serif","system-ui","-apple-system","sans-serif"]},maxWidth:{container:"1100px"}}}}</script><style type=text/tailwindcss>
+    @layer base {
+       
+      article h1 {
+        @apply text-3xl sm:text-4xl font-bold text-primary mb-6 mt-8 leading-tight;
+      }
+      
+      article h2 {
+        @apply text-2xl sm:text-3xl font-bold text-primary mb-4 mt-8 leading-tight;
+      }
+      
+      article h3 {
+        @apply text-xl sm:text-2xl font-semibold text-primary mb-3 mt-6 leading-snug;
+      }
+      
+      article h4 {
+        @apply text-lg sm:text-xl font-semibold text-primary mb-3 mt-5 leading-snug;
+      }
+      
+      article h5 {
+        @apply text-base sm:text-lg font-semibold text-primary mb-2 mt-4;
+      }
+      
+      article h6 {
+        @apply text-base font-semibold text-primary mb-2 mt-4;
+      }
+      
+       
+      article > h1:first-child,
+      article > h2:first-child,
+      article > h3:first-child,
+      article > h4:first-child,
+      article > h5:first-child,
+      article > h6:first-child {
+        @apply mt-0;
+      }
+      
+       
+      article p {
+        @apply text-base text-gray-700 mb-4 leading-relaxed;
+      }
+      
+      article p strong {
+        @apply font-semibold text-primary;
+      }
+      
+      article p em {
+        @apply italic;
+      }
+      
+       
+      article a {
+        @apply text-accent-blue hover:text-accent-hover-blue underline transition-colors;
+      }
+      
+       
+      article ul {
+        @apply list-disc list-outside ml-6 mb-4 space-y-2;
+      }
+      
+      article ol {
+        @apply list-decimal list-outside ml-6 mb-4 space-y-2;
+      }
+      
+      article li {
+        @apply text-base text-gray-700 leading-relaxed;
+      }
+      
+      article li > ul,
+      article li > ol {
+        @apply mt-2 mb-2;
+      }
+      
+       
+      article blockquote {
+        @apply border-l-4 border-accent-blue pl-4 py-2 mb-4 italic text-gray-600;
+      }
+      
+       
+      article code {
+        @apply bg-gray-100 px-1.5 py-0.5 rounded text-sm font-mono text-accent-red;
+      }
+      
+      article pre {
+        @apply bg-gray-100 p-4 rounded-lg mb-4 overflow-x-auto;
+      }
+      
+      article pre code {
+        @apply bg-transparent p-0 text-sm;
+      }
+      
+       
+      article hr {
+        @apply border-0 border-t border-gray-200 my-8;
+      }
+      
+       
+      article table {
+        @apply w-full mb-4 border-collapse;
+      }
+      
+      article th {
+        @apply bg-gray-50 px-4 py-2 text-left font-semibold text-primary border-b-2 border-gray-200;
+      }
+      
+      article td {
+        @apply px-4 py-2 border-b border-gray-200 text-gray-700;
+      }
+      
+      article tr:last-child td {
+        @apply border-b-0;
+      }
+      
+       
+      article img {
+        @apply rounded-lg mb-4 max-w-full h-auto;
+      }
+    }
+    
+     
+    body.menu-open {
+      overflow: hidden;
+    }
+  </style></head><body class="bg-background text-primary antialiased"><header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href=https://philipp-heyse.github.io/jsg/ class="flex-shrink-0 transition-opacity hover:opacity-80"><img src=/jsg/logo.png alt="JSG Hohe Warte Logo" class="h-10 w-auto"></a><nav class="hidden md:flex items-center space-x-8"><a href=/jsg/jsg-hohe-warte/ class="text-sm font-medium transition-colors hover:text-accent-blue text-primary">JSG Hohe Warte
+</a><a href=/jsg/unser-konzept/ class="text-sm font-medium transition-colors hover:text-accent-blue text-primary">Unser Konzept
+</a><a href=/jsg/unsere-teams/ class="text-sm font-medium transition-colors hover:text-accent-blue text-accent-blue font-semibold">Unsere Teams
+</a><a href=/jsg/training-spiel/ class="text-sm font-medium transition-colors hover:text-accent-blue text-primary">Training & Spiel
+</a><a href=/jsg/sponsoren/ class="text-sm font-medium transition-colors hover:text-accent-blue text-primary">Sponsoren</a></nav><button id=menuBtn class="md:hidden p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Menü öffnen" aria-expanded=false>
+<svg class="w-6 h-6 text-primary" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"/></svg></button></div></div></header><div id=mobileMenu class="fixed inset-0 bg-black/50 hidden z-50 md:hidden transition-opacity"><div id=mobileMenuPanel class="absolute right-0 top-0 h-full w-80 max-w-[85vw] bg-white shadow-2xl transform transition-transform duration-300 translate-x-full"><div class="flex flex-col h-full"><div class="flex items-center justify-between p-4 border-b border-gray-200"><span class="text-lg font-semibold text-primary">Menü</span>
+<button id=closeBtn class="p-2 rounded-lg hover:bg-gray-100 transition-colors" aria-label="Menü schließen">
+<svg class="w-6 h-6 text-muted" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg></button></div><nav class="flex-1 overflow-y-auto p-4"><div class=space-y-1><div class=space-y-1><a href=/jsg/jsg-hohe-warte/ class="block px-3 py-2 rounded-lg text-base font-medium transition-colors text-primary hover:bg-gray-100">JSG Hohe Warte</a></div><div class=space-y-1><a href=/jsg/unser-konzept/ class="block px-3 py-2 rounded-lg text-base font-medium transition-colors text-primary hover:bg-gray-100">Unser Konzept</a></div><div class=space-y-1><a href=/jsg/unsere-teams/ class="block px-3 py-2 rounded-lg text-base font-medium transition-colors bg-accent-blue/10 text-accent-blue">Unsere Teams</a><div class="ml-3 space-y-1 mt-1"><a href=/jsg/unsere-teams/bambinis/ class="block px-3 py-2 rounded-lg text-sm transition-colors text-muted hover:bg-gray-100 hover:text-primary">Bambinis
+</a><a href=/jsg/unsere-teams/f-jugend/ class="block px-3 py-2 rounded-lg text-sm transition-colors text-muted hover:bg-gray-100 hover:text-primary">F-Jugend
+</a><a href=/jsg/unsere-teams/e-jugend/ class="block px-3 py-2 rounded-lg text-sm transition-colors text-muted hover:bg-gray-100 hover:text-primary">E-Jugend
+</a><a href=/jsg/unsere-teams/d-jugend/ class="block px-3 py-2 rounded-lg text-sm transition-colors bg-accent-blue/10 text-accent-blue font-medium">D-Jugend</a></div></div><div class=space-y-1><a href=/jsg/training-spiel/ class="block px-3 py-2 rounded-lg text-base font-medium transition-colors text-primary hover:bg-gray-100">Training & Spiel</a></div><div class=space-y-1><a href=/jsg/sponsoren/ class="block px-3 py-2 rounded-lg text-base font-medium transition-colors text-primary hover:bg-gray-100">Sponsoren</a></div></div></nav></div></div></div><div class="hidden md:block bg-gray-50 border-b border-gray-200"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center space-x-6 py-3 overflow-x-auto"><a href=/jsg/unsere-teams/bambinis/ class="text-sm font-medium whitespace-nowrap transition-colors text-muted hover:text-primary">Bambinis
+</a><a href=/jsg/unsere-teams/f-jugend/ class="text-sm font-medium whitespace-nowrap transition-colors text-muted hover:text-primary">F-Jugend
+</a><a href=/jsg/unsere-teams/e-jugend/ class="text-sm font-medium whitespace-nowrap transition-colors text-muted hover:text-primary">E-Jugend
+</a><a href=/jsg/unsere-teams/d-jugend/ class="text-sm font-medium whitespace-nowrap transition-colors text-accent-red">D-Jugend</a></div></div></div><main class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8 min-h-[60vh]"><article><h1>D-Jugend</h1><h1 id=stehen-als-team-stabil>STEHEN ALS TEAM STABIL:</h1><p>UNSERE D-JUNIOREN.</p><p>Die 11- bis 12-jährigen zukünftigen Ballon-d’Or-Anwärter befinden sich im besten Lernalter für den
+Entwicklungsprozess. Im „Goldenen Lernalter“ werden sie durch ein systematisches Training der
+Basistechniken und deren Anwendung in verschiedenen Spielsituationen geschult. Dabei werden
+weiterhin Spielfreude und Spielkreativität im Vordergrund stehen. Der altersbedingten hohen Lern-
+und Leistungsbereitschaft werden wir gerecht durch die Schulung individualtaktischer Defensiv- und
+Offensivabläufe, etwa das Spiel 1:1 oder das Spielen in Überzahl- und Unterzahlsituationen.</p><p>Das fußballspezifische Techniktraining umfasst u.a. Dribbeln mit Richtungswechseln, Passspiel,
+Spannstoß, Finten und Kopfballtraining. Daneben möchten wir zudem gruppentaktische Grundlagen
+für das Spielen im Raum vermitteln sowie die Eigeninitiative und die Motivation der einzelnen
+Kinder fördern.</p><h3 id=trainingsinhalte-im-detail>Trainingsinhalte im Detail:</h3><ul><li><strong>Spielerische Konditionsschulung:</strong> Steigerung der Ausdauerleistungsfähigkeit durch kleine
+Fußballspiele; Verbesserung schnelligkeitsbezogener bzw. schnellkräftiger Bewegungen mit
+motivierenden Lauf- und Sprungwettbewerben; Allgemeine Kräftigung vor allem der
+vernachlässigten Muskelgruppen vorrangig durch motivierende Einzel- und Partneraufgaben;
+Schulung von Beweglichkeit und Geschicklichkeit als Grundlage für komplexe koordinative
+Abläufe</li><li><strong>Systematisches Techniktraining:</strong> Erlernen und Festigen aller Techniken wie Dribbeln,
+Passen, An- und Mitnehmen, Schießen, Köpfen; Erreichen einer hohen Bewegungspräzision
+bei gleichzeitiger Toleranz für verschiedenartige individuelle Ausprägungen; Verbessern der
+Ballgeschicklichkeit und der Kreativität mit dem Ball auch in koordinativ anspruchsvollen
+Abläufen; Wechselseitige Beziehungen zwischen technischen und taktischen Inhalten:
+Anwenden der Techniken zur Lösung von Spielaufgaben</li><li><strong>Individualtaktische Grundlagen:</strong> Schulung individualtaktischer Verhaltensweisen in
+Abwehr und Angriff, zum Beispiel: Lösungsmöglichkeiten für den Ballbesitzer, Laufwege aus
+dem Deckungschatten des Gegners; Intensive Zweikampfschulung in Offensive und
+Defensive; Erlernen gruppentaktischer Grundlagen für das Spielen im Raum wie etwa
+ballorientiertes Verschieben oder Übergeben/Übernehmen; Gruppenspiele mit
+Provokationsregeln (z.B. Spiel mit drei Ballkontakten, langer Pass nach drei kurzen
+Zuspielen)</li><li><strong>Fußballspiele mit Schwerpunkten und freies Spielen:</strong> Freie Fußballspiele in Teams in den
+Spielformen Sieben gegen Sieben oder Neun gegen Neun; Anwendung aller taktischen und
+individualtaktischen Elemente unter verstärktem Gegnerdruck; Erste Spielerfahrungen mit
+gruppentaktischen Grundlagen; Motivierende Turniere auf dem Kleinspielfeld zur Förderung
+von Spielfreude und Kreativität; Fortschreitende Einstellung der Spieler auf größer werdende
+Spielfelder; Freie Fußballspiele in verschiedenen Mannschaftsgrößen</li></ul><hr><div style=display:flex;justify-content:flex-start><a href=/jsg/unsere-teams/e-jugend/>← E-Junioren</a></div></article></main><footer class="bg-white border-t border-gray-200 mt-16"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8"><div class="text-sm text-muted space-y-4"><p>© 2025 JSG Hohe Warte · Built with Hugo</p><div class="flex flex-wrap gap-x-4 gap-y-2"><a href=/impressum/ class="hover:text-accent-blue transition-colors">Impressum</a>
+<a href=/kontakt/ class="hover:text-accent-blue transition-colors">Kontakt</a>
+<a href=/datenschutz/ class="hover:text-accent-blue transition-colors">Datenschutz</a>
+<a href=https://facebook.com target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Facebook</a>
+<a href=https://instagram.com target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Instagram</a></div></div></div></footer><script>const menuBtn=document.getElementById("menuBtn"),closeBtn=document.getElementById("closeBtn"),mobileMenu=document.getElementById("mobileMenu"),mobileMenuPanel=document.getElementById("mobileMenuPanel"),body=document.body;function openMenu(){mobileMenu.classList.remove("hidden"),body.classList.add("menu-open"),mobileMenuPanel.offsetHeight,mobileMenuPanel.classList.remove("translate-x-full"),menuBtn.setAttribute("aria-expanded","true")}function closeMenu(){mobileMenuPanel.classList.add("translate-x-full"),menuBtn.setAttribute("aria-expanded","false"),setTimeout(()=>{mobileMenu.classList.add("hidden"),body.classList.remove("menu-open")},300)}menuBtn&&(menuBtn.onclick=openMenu),closeBtn&&(closeBtn.onclick=closeMenu),mobileMenu&&(mobileMenu.onclick=e=>{e.target===mobileMenu&&closeMenu()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&!mobileMenu.classList.contains("hidden")&&closeMenu()})</script></body></html>
