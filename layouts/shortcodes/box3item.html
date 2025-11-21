@@ -2,9 +2,10 @@
 {{- $link := .Get "link" -}}
 {{- $icon := .Get "icon" | default "circle" -}}
 {{- $linktext := .Get "linktext" -}}
+{{- $external := .Get "external" -}}
 <article role="listitem" class="h-full">
   <a class="h-full grid grid-rows-[auto_auto_1fr_auto] gap-2 p-4 sm:p-5 border border-gray-200 rounded-xl no-underline text-inherit bg-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:border-gray-300"
-    href="{{ $link }}">
+    href="{{ $link }}"{{ if $external }} target="_blank" rel="noopener"{{ end }}>
     <span class="w-7 h-7 text-primary" aria-hidden="true">
       {{ with resources.Get (printf "icons/%s.svg" $icon) }}{{ .Content | safeHTML }}{{ end }}
     </span>

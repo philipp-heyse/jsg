@@ -21,28 +21,22 @@ deinen Königstransfer wie folgt zugeordnet:
 
 {{< box3 >}}
 
-  {{< box3item title="SV 1945 Annerod e.V." link="URL_ZUM_ANTRAG" icon="file-text" >}}
+  {{< box3item title="SV 1945 Annerod e.V." link="https://hidrive.ionos.com/lnk/Wv6oFERig" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
   Mach deine Karriere steil  
   im Sportverein 1945 Annerod e.V.  
-  35463 Fernwald  
-
-  **→ Zum Mitglieds- und Passantrag**
+  35463 Fernwald
   {{< /box3item >}}
 
-  {{< box3item title="SV 1928 Garbenteich e.V." link="URL_ZUM_ANTRAG" icon="file-text" >}}
+  {{< box3item title="SV 1928 Garbenteich e.V." link="https://hidrive.ionos.com/lnk/TsxkruF3" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
   Zeig dein Jahrhunderttalent  
   im Sportverein 1928 Garbenteich e.V.  
-  35415 Pohlheim  
-
-  **→ Zum Mitglieds- und Passantrag**
+  35415 Pohlheim
   {{< /box3item >}}
 
-  {{< box3item title="TV 1864 Hausen e.V." link="URL_ZUM_ANTRAG" icon="file-text" >}}
+  {{< box3item title="TV 1864 Hausen e.V." link="https://hidrive.ionos.com/lnk/NeRkLUqY" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
   Dein erster Schritt zur Legende  
   im Turnverein 1864 Hausen e.V.  
-  35415 Pohlheim  
-
-  **→ Zum Mitglieds- und Passantrag**
+  35415 Pohlheim
   {{< /box3item >}}
 
 {{< /box3 >}}

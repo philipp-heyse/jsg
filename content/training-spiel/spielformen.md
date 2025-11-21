@@ -18,7 +18,7 @@ aufgelistet – und kurz erklärt.
 
 ## SPIELFORM G-JUNIOREN / BAMBINIS
 
-![Spielform G-Junioren](spielform-g.jpg)
+![Spielform G-Junioren](/Spielfeld_Fussball_GJugend.jpg)
 
 **So wird gespielt:** 3 gegen 3. Ein Team besteht aus drei Feldspielern. Es wird auf 4 Funinio-Tore mit 3
 Feldspielern und ohne Torwart gespielt. …
@@ -32,7 +32,7 @@ weitestgehend selbst getroffen werden. …
 
 ## SPIELFORM F2-JUNIOREN
 
-![Spielform F2-Junioren](spielform-f2.jpg)
+![Spielform F2-Junioren](/Spielfeld_Fussball_FJugend.jpg)
 
 **So wird gespielt:** 4 gegen 4 / 5 gegen 5 …  
 **Das sind die Spielregeln:** Tore dürfen in der 6m-Schusszone erzielt werden. …  
@@ -45,7 +45,7 @@ weitestgehend selbst getroffen werden. …
 
 ## SPIELFORM F1-JUNIOREN
 
-![Spielform F1-Junioren](spielform-f1.jpg)
+![Spielform F1-Junioren](/Spielfeld_Fussball_FJugend.jpg)
 
 **So wird gespielt:** 5 gegen 5 …  
 **Das sind die Spielregeln:** Tore dürfen ab der Mittellinie erzielt werden. …  
@@ -58,7 +58,7 @@ weitestgehend selbst getroffen werden. …
 
 ## SPIELFORM E3-JUNIOREN
 
-![Spielform E3-Junioren](spielform-e3.jpg)
+![Spielform E3-Junioren](/Spielfeld_Fussball_EJugend.jpg)
 
 **So wird gespielt:** 5 gegen 5 …  
 **Das sind die Spielregeln:** Tore dürfen ab der Mittellinie erzielt werden. …  
@@ -71,7 +71,7 @@ weitestgehend selbst getroffen werden. …
 
 ## SPIELFORM E1-JUNIOREN
 
-![Spielform E1-Junioren](spielform-e1.jpg)
+![Spielform E1-Junioren](/Spielfeld_Fussball_EJugend.jpg)
 
 **So wird gespielt:** 7 gegen 7 …  
 **Das sind die Spielregeln:** Tore dürfen beim 7 vs. 7 von überall erzielt werden. …  
@@ -82,9 +82,7 @@ getroffen werden. …
 
 ---
 
-## SPIELFORM D9-JUNIOREN
-
-![Spielform D9-Junioren](spielform-d9.jpg)
+## SPIELFORM D9-JUNIOREN (Sechzehner zu Sechzehner)
 
 **So wird gespielt:** 9 gegen 9 …  
 **Das sind die Spielregeln:** Tore dürfen beim 9 vs. 9 von überall erzielt werden. …  
@@ -96,19 +94,15 @@ getroffen. …
 
 ## SPIELFORM D7-JUNIOREN (Halbfeld quer)
 
-![Spielform D7-Junioren](spielform-d7.jpg)
-
-**So wird gespielt:** 9 gegen 9 …  
-**Das sind die Spielregeln:** Tore dürfen beim 9 vs. 9 von überall erzielt werden. …  
-**Der Spielmodus:** 9 vs. 9, Spielzeit 2 × 35 min.  
+**So wird gespielt:** 7 gegen 7 …  
+**Das sind die Spielregeln:** Tore dürfen beim 7 vs. 7 von überall erzielt werden. …  
+**Der Spielmodus:** 7 vs. 7, Spielzeit 2 × 35 min.  
 **Während des Spiels:** Die Entscheidungen während des Spiels werden von den Schiedsrichtern
 getroffen. …
 
 ---
 
 ## SPIELFORM A-, B-, C-JUNIOREN
-
-![Spielform ABC-Junioren](spielform-abc.jpg)
 
 Ab der C-Jugend stimmen dann die altbekannten Phrasen wieder:  
 *Ein Spiel dauert 90 Minuten. Das Runde muss in das Eckige. 11 Freunde müsst Ihr sein.*
