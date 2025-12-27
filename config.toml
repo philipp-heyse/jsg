@@ -1,4 +1,4 @@
-baseURL = "/"
+baseURL = "https://jsg-hohe-warte.de/"
 languageCode = "en-us"
 title = "Hugo Two-Level Menu"
 enableRobotsTXT = true

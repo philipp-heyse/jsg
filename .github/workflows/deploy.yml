@@ -24,21 +24,9 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
-      - name: Detect GitHub Pages base URL
-        id: pages
-        shell: bash
-        run: |
-          REPO="${{ github.event.repository.name }}"
-          OWNER="${{ github.repository_owner }}"
-          if [[ "$REPO" == *.github.io ]]; then
-            echo "base_url=https://${REPO}/" >> $GITHUB_OUTPUT
-          else
-            echo "base_url=https://${OWNER}.github.io/${REPO}/" >> $GITHUB_OUTPUT
-          fi
-          echo "Using base URL: $(cat $GITHUB_OUTPUT)"
 
       - name: Build
-        run: hugo --minify --baseURL "${{ steps.pages.outputs.base_url }}"
+        run: hugo --minify
 
       - name: Deploy to gh-pages
         uses: peaceiris/actions-gh-pages@v4
