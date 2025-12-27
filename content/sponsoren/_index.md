@@ -25,46 +25,36 @@ Und so kannst du uns unterstützen:
 
 ---
 
-## Individuelle Sponsoring-Pakete
-
-![Platzhalter](https://via.placeholder.com/800x400?text=Individuelle+Pakete)
-
-Bekanntlich sind Standards ja immer gefährlich. Deshalb schnüren wir mit dir gemeinsam lieber ein
-individuelles Taktikpaket, mit dem du neue Ultras für dein Unternehmen finden kannst.  
+{{< boxtextimage position="left" imageSize="small" title="Individuelle Sponsoring-Pakete" image="/images/sponsoring/individuelle-pakete.png" >}}
+Bekanntlich sind Standards ja immer gefährlich. Deshalb schnüren wir mit dir gemeinsam lieber ein individuelles Taktikpaket, mit dem du neue Ultras für dein Unternehmen finden kannst.  
 Am besten treffen wir uns persönlich und spielen einen gepflegten Doppelpass, der dann zu einem schönen Spielzug führt.
+{{< /boxtextimage >}}
 
 ---
 
-## Stadionwerbung
-
-![Platzhalter](https://via.placeholder.com/800x400?text=Stadionwerbung)
-
+{{< boxtextimage position="right" imageSize="small" title="Stadionwerbung" image="/images/sponsoring/stadionwerbung.png" >}}
 Entscheidest du dich für Bandenwerbung, werden wir das Spiel über die Flügel intensivieren.  
 Natürlich bieten wir in unseren drei Stadien in Hausen, Garbenteich und Annerod noch weitere Möglichkeiten des Sponsorings, z.B. Werbung auf der Trainerbank.
+{{< /boxtextimage >}}
 
 ---
 
-## Autogrammstunden
-
-![Platzhalter](https://via.placeholder.com/800x400?text=Autogrammstunden)
-
+{{< boxtextimage position="left" imageSize="small" title="Autogrammstunden" image="/images/sponsoring/autogrammstunden.png" >}}
 Ja, du liest richtig. Wir bieten auch gern im Rahmen deines Sponsorings Autogrammstunden an – mit unseren Trainern und Betreuern (ohne Kids).  
 Diese exklusive Gelegenheit darfst du für deine Social-Media-Kanäle nutzen. Ehrensache.
+{{< /boxtextimage >}}
 
 ---
 
-## Events
-
-![Platzhalter](https://via.placeholder.com/800x400?text=Events)
-
+{{< boxtextimage position="right" imageSize="small" title="Events" image="/images/sponsoring/events.png" >}}
 Ausflüge zu Profispielen, Trainingslager oder ein Wochenendausflug zu Turnieren schaffen vor allem eines: **großartige Erlebnisse**.  
 Erlebnisse, von denen unsere Kids noch ihren Enkeln erzählen werden.
+{{< /boxtextimage >}}
 
 ---
 
-## Online-Werbung
-
-![Platzhalter](https://via.placeholder.com/800x400?text=Online-Werbung)
-
+{{< boxtextimage position="left" imageSize="small" title="Online-Werbung" image="/images/sponsoring/online-werbung.png" >}}
 Der Vorteil unserer Website: Da ist massig Platz, wenn wir ihn schaffen. Zum Beispiel für dein Unternehmens-Logo.  
 Neben der Nennung deines Unternehmens oder der Platzierung deines Logos sind wir auch offen, die Reichweite unserer Social-Media-Kanäle zu nutzen, um über gute Taten für die Kids zu berichten.
+{{< /boxtextimage >}}
+
