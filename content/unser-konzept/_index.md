@@ -26,4 +26,4 @@ Zlatan seinen Fallrückzieher aus 30 Metern! Ach, ist das schön …
 
 ## Download
 
-[Unser Konzept](/241015_Konzept JSG HOHE WARTE_v03.pdf)
+[Unser Konzept](/konzept-jsg-hohe-warte.pdf)
