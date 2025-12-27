@@ -61,4 +61,4 @@ Welche Chancen es bei uns gibt und was Du davon hast: [Sponsoring bei der JSG]({
 ## Hier kannst du mitspielen!
 
 Lust auf ein Probetraining? Fragen? Oder möchtest du uns unterstützen?  
-[Anpfiff zur Kontaktaufnahme]({{< relref "kontakt" >}})
+[Anpfiff zu deinen Ansprechpartnern]({{< relref "jsg-hohe-warte/deine-ansprechpartner" >}})
