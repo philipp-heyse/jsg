@@ -12,17 +12,9 @@ Wenn das ehemalige Top-Talent plötzlich in einer Fahrstuhlmannschaft landet, li
 
 ## Jugendleitung & Vorstand
 
-### Lars Klingmann
-**Jugendleiter · SV 1945 Annerod e.V.**  
-📞 [+49 174 971 41 41](tel:+491749714141)  
-✉️ [Lars.Klingmann@jsg-hohe-warte.de](mailto:Lars.Klingmann@jsg-hohe-warte.de)
-
----
-
-### Simon Pötter
-**Jugendleiter · SV 1928 Garbenteich e.V.**  
-📞 [+49 151 207 776 69](tel:+4915120777669)  
-✉️ [Simon.Poetter@jsg-hohe-warte.de](mailto:Simon.Poetter@jsg-hohe-warte.de)
+### Thomas Buß
+**Jugendleiter · TV 1864 Hausen e.V.**  
+✉️ [jugendleiter@jsg-hohe-warte.de](mailto:jugendleiter@jsg-hohe-warte.de)
 
 ---
 
@@ -35,12 +27,6 @@ Wenn das ehemalige Top-Talent plötzlich in einer Fahrstuhlmannschaft landet, li
 ### Dennis Keßler
 **Kassenwart · JSG Hohe Warte**  
 ✉️ [Dennis.Kessler@jsg-hohe-warte.de](mailto:Dennis.Kessler@jsg-hohe-warte.de)
-
----
-
-### Benjamin Wagner
-**Schriftführer · JSG Hohe Warte**  
-✉️ [Benjamin.Wagner@jsg-hohe-warte.de](mailto:Benjamin.Wagner@jsg-hohe-warte.de)
 
 ---
 
