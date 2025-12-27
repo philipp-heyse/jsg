@@ -20,8 +20,8 @@ Werte wie Fairness, Gerechtigkeit oder Pünktlichkeit sind dabei für unsere Tra
 
 Unsere Trainer erledigen zudem eine ganze Reihe organisatorischer Aufgaben, die über die sportliche und pädagogische Betreuung der Mannschaft hinausgehen.
 
-{{< slider >}}
-{{< slide title="PÄDAGOGISCHE ARBEIT" >}}Die JSG Hohe Warte und unsere Trainer möchten pädagogisch wertvoll handeln und lehren.{{< /slide >}}
-{{< slide title="ORGANISATORISCHE AUFGABEN" >}}Neben der direkten Arbeit mit den Kindern, erledigen unsere Trainer auch organisatorische Aufgaben, die zu einem funktionierendem Vereinsleben beitragen.{{< /slide >}}
-{{< slide title="ZUSAMMENARBEIT MIT DEM VEREIN" >}}Die transparente und aktive Zusammenarbeit auf Vereinsebene gehört für unsere Trainer dazu, damit die Jugendspielgemeinschaft mit allen ihren Teams funktionieren kann.{{< /slide >}}
-{{< /slider >}}
+{{< accordion >}}
+{{< accordionitem title="PÄDAGOGISCHE ARBEIT" >}}Die JSG Hohe Warte und unsere Trainer möchten pädagogisch wertvoll handeln und lehren.{{< /accordionitem >}}
+{{< accordionitem title="ORGANISATORISCHE AUFGABEN" >}}Neben der direkten Arbeit mit den Kindern, erledigen unsere Trainer auch organisatorische Aufgaben, die zu einem funktionierendem Vereinsleben beitragen.{{< /accordionitem >}}
+{{< accordionitem title="ZUSAMMENARBEIT MIT DEM VEREIN" >}}Die transparente und aktive Zusammenarbeit auf Vereinsebene gehört für unsere Trainer dazu, damit die Jugendspielgemeinschaft mit allen ihren Teams funktionieren kann.{{< /accordionitem >}}
+{{< /accordion >}}
