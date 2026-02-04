@@ -152,12 +152,24 @@
       
       /* Typography - Images */
       article img {
-        @apply rounded-lg mb-4 max-w-full h-auto;
+        @apply rounded-lg mb-4 max-w-full h-auto cursor-pointer transition-transform hover:scale-[1.02];
+      }
+
+      /* Smaller images on desktop */
+      @media (min-width: 768px) {
+        article img {
+          @apply max-w-md;
+        }
       }
     }
-    
+
     /* Prevent body scroll when mobile menu is open */
     body.menu-open {
+      overflow: hidden;
+    }
+
+    /* Lightbox */
+    body.lightbox-open {
       overflow: hidden;
     }
   </style>
@@ -175,7 +187,7 @@
 
         <!-- Desktop Navigation -->
         <nav class="hidden md:flex items-center space-x-8">
-          {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+          {{ $exclude := slice "impressum" "kontakt" "datenschutz" "waldkicker" }}
           {{ range .Site.Sections }}
           {{ if not (in $exclude .Section) }}
           <a href="{{ .RelPermalink }}"
@@ -215,7 +227,7 @@
         <!-- Mobile Menu Content -->
         <nav class="flex-1 overflow-y-auto p-4">
           <div class="space-y-1">
-            {{ $exclude := slice "impressum" "kontakt" "datenschutz" }}
+            {{ $exclude := slice "impressum" "kontakt" "datenschutz" "waldkicker" }}
             {{ $curr := .CurrentSection }}
 
             {{ range .Site.Sections }}
@@ -253,7 +265,8 @@
 
   <!-- Subnav (Desktop only) -->
   {{ $current := .CurrentSection }}
-  {{ if and (not .IsHome) ($current) }}
+  {{ $noSubnav := slice "/impressum/" "/kontakt/" "/datenschutz/" "/waldkicker/" }}
+  {{ if and (not .IsHome) ($current) (not (in $noSubnav .RelPermalink)) }}
   {{ $children := where $current.Pages "Kind" "page" }}
   {{ $sorted := sort $children "Weight" "Title" }}
   {{ if $sorted }}
@@ -288,14 +301,19 @@
           <a href="/impressum/" class="hover:text-accent-blue transition-colors">Impressum</a>
           <a href="/kontakt/" class="hover:text-accent-blue transition-colors">Kontakt</a>
           <a href="/datenschutz/" class="hover:text-accent-blue transition-colors">Datenschutz</a>
-          <a href="https://facebook.com" target="_blank" rel="noopener"
+          <a href="https://www.facebook.com/p/JSG-Hohe-Warte-100070618639965/" target="_blank" rel="noopener"
             class="hover:text-accent-blue transition-colors">Facebook</a>
-          <a href="https://instagram.com" target="_blank" rel="noopener"
+          <a href="https://www.instagram.com/jsghohewarte/" target="_blank" rel="noopener"
             class="hover:text-accent-blue transition-colors">Instagram</a>
         </div>
       </div>
     </div>
   </footer>
+
+  <!-- Waldkicker Flyout (Homepage only) -->
+  {{ if .IsHome }}
+    {{ partial "waldkicker-flyout.html" . }}
+  {{ end }}
 
   <!-- Scripts -->
   <script>
@@ -335,6 +353,51 @@
     document.addEventListener('keydown', (e) => {
       if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
         closeMenu();
+      }
+    });
+  </script>
+
+  <!-- Lightbox -->
+  <div id="lightbox" class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4">
+    <button id="lightbox-close" class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" aria-label="Schließen">
+      <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path>
+      </svg>
+    </button>
+    <img id="lightbox-img" src="" alt="" class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg">
+  </div>
+
+  <script>
+    // Lightbox functionality
+    const lightbox = document.getElementById('lightbox');
+    const lightboxImg = document.getElementById('lightbox-img');
+    const lightboxClose = document.getElementById('lightbox-close');
+
+    // Add click handlers to all article images
+    document.querySelectorAll('article img').forEach(img => {
+      img.addEventListener('click', () => {
+        lightboxImg.src = img.src;
+        lightboxImg.alt = img.alt;
+        lightbox.classList.remove('hidden');
+        lightbox.classList.add('flex');
+        document.body.classList.add('lightbox-open');
+      });
+    });
+
+    function closeLightbox() {
+      lightbox.classList.add('hidden');
+      lightbox.classList.remove('flex');
+      document.body.classList.remove('lightbox-open');
+    }
+
+    lightboxClose.addEventListener('click', closeLightbox);
+    lightbox.addEventListener('click', (e) => {
+      if (e.target === lightbox) closeLightbox();
+    });
+
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && !lightbox.classList.contains('hidden')) {
+        closeLightbox();
       }
     });
   </script>
