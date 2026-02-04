@@ -113,12 +113,24 @@
       
        
       article img {
-        @apply rounded-lg mb-4 max-w-full h-auto;
+        @apply rounded-lg mb-4 max-w-full h-auto cursor-pointer transition-transform hover:scale-[1.02];
+      }
+
+       
+      @media (min-width: 768px) {
+        article img {
+          @apply max-w-md;
+        }
       }
     }
-    
+
      
     body.menu-open {
+      overflow: hidden;
+    }
+
+     
+    body.lightbox-open {
       overflow: hidden;
     }
   </style></head><body class="bg-background text-primary antialiased"><header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8"><div class="flex items-center justify-between h-16"><a href=https://jsg-hohe-warte.de/ class="flex-shrink-0 transition-opacity hover:opacity-80"><img src=https://jsg-hohe-warte.de/logo.png alt="JSG Hohe Warte Logo" class="h-10 w-auto"></a><nav class="hidden md:flex items-center space-x-8"><a href=/jsg-hohe-warte/ class="text-sm font-medium transition-colors hover:text-accent-blue text-primary">JSG Hohe Warte
@@ -141,8 +153,11 @@ sollten. Schließlich tun sich ja damit bereits so einige Bundesligaspieler jede
 Altersklassen U6–U11. Und weil das jetzt etwas trocken geklungen hat, erklären wir das hinter dem Link genauer.</p><p>👉 <a href=/training-spiel/spielformen/>Alle Spielformen</a></p></div></div><div class=boxlist-item><h2 class=boxlist-title>EIN BISSCHEN KLOPPO, EIN BISSCHEN MAMA: DIE ROLLE DES TRAINERS.</h2><div class=boxlist-content><p>Unsere Trainer wollen den Kids natürlich fußballerisch einiges beibringen. Aber neben den sportlichen
 Übungen stehen auch viele Themen auf dem Lehrplan, die über das eigentliche Training hinausgehen.<br>Welche das sind, erfährst du, wenn du diesen Steilpass aufnimmst und klicken verwandelst.</p><p>👉 <a href=/training-spiel/rolle-des-trainers/>Die Rolle des Trainers</a></p></div></div><div class=boxlist-item><h2 class=boxlist-title>ZEUGWART, SPIELERTAXI & BARIST(UT)A: DIE ROLLE DER ELTERN.</h2><div class=boxlist-content><p>Die Eltern unserer Spieler sind unsere Fanclubs. Wie überall auf der Welt, haben auch unsere
 Fanclubs einen ungeheuren Wert für uns, denn ihre Mitglieder sorgen für tolle Stimmung auf den
-Rängen – und sie supporten den Verein im Rahmen ihrer Möglichkeiten.<br>Ob Heimspiele am Verkaufsstand, Auswärtsfahrten als Spielertaxi oder die abwechselnde Trikotwäsche: Ohne Eltern läuft’s nicht. Welche Rolle euch als Spieler-Eltern zukommt, erfahrt ihr hier.</p><p>👉 <a href=/training-spiel/rolle-der-eltern/>Die Rolle der Eltern</a></p></div></div></div></article></article></main><footer class="bg-white border-t border-gray-200 mt-16"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8"><div class="text-sm text-muted space-y-4"><p>© 2025 JSG Hohe Warte · Built with Hugo</p><div class="flex flex-wrap gap-x-4 gap-y-2"><a href=/impressum/ class="hover:text-accent-blue transition-colors">Impressum</a>
+Rängen – und sie supporten den Verein im Rahmen ihrer Möglichkeiten.<br>Ob Heimspiele am Verkaufsstand, Auswärtsfahrten als Spielertaxi oder die abwechselnde Trikotwäsche: Ohne Eltern läuft’s nicht. Welche Rolle euch als Spieler-Eltern zukommt, erfahrt ihr hier.</p><p>👉 <a href=/training-spiel/rolle-der-eltern/>Die Rolle der Eltern</a></p></div></div></div></article></article></main><footer class="bg-white border-t border-gray-200 mt-16"><div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8 py-8"><div class="text-sm text-muted space-y-4"><p>© 2026 JSG Hohe Warte · Built with Hugo</p><div class="flex flex-wrap gap-x-4 gap-y-2"><a href=/impressum/ class="hover:text-accent-blue transition-colors">Impressum</a>
 <a href=/kontakt/ class="hover:text-accent-blue transition-colors">Kontakt</a>
 <a href=/datenschutz/ class="hover:text-accent-blue transition-colors">Datenschutz</a>
-<a href=https://facebook.com target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Facebook</a>
-<a href=https://instagram.com target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Instagram</a></div></div></div></footer><script>const menuBtn=document.getElementById("menuBtn"),closeBtn=document.getElementById("closeBtn"),mobileMenu=document.getElementById("mobileMenu"),mobileMenuPanel=document.getElementById("mobileMenuPanel"),body=document.body;function openMenu(){mobileMenu.classList.remove("hidden"),body.classList.add("menu-open"),mobileMenuPanel.offsetHeight,mobileMenuPanel.classList.remove("translate-x-full"),menuBtn.setAttribute("aria-expanded","true")}function closeMenu(){mobileMenuPanel.classList.add("translate-x-full"),menuBtn.setAttribute("aria-expanded","false"),setTimeout(()=>{mobileMenu.classList.add("hidden"),body.classList.remove("menu-open")},300)}menuBtn&&(menuBtn.onclick=openMenu),closeBtn&&(closeBtn.onclick=closeMenu),mobileMenu&&(mobileMenu.onclick=e=>{e.target===mobileMenu&&closeMenu()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&!mobileMenu.classList.contains("hidden")&&closeMenu()})</script></body></html>
+<a href=https://www.facebook.com/p/JSG-Hohe-Warte-100070618639965/ target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Facebook</a>
+<a href=https://www.instagram.com/jsghohewarte/ target=_blank rel=noopener class="hover:text-accent-blue transition-colors">Instagram</a></div></div></div></footer><script>const menuBtn=document.getElementById("menuBtn"),closeBtn=document.getElementById("closeBtn"),mobileMenu=document.getElementById("mobileMenu"),mobileMenuPanel=document.getElementById("mobileMenuPanel"),body=document.body;function openMenu(){mobileMenu.classList.remove("hidden"),body.classList.add("menu-open"),mobileMenuPanel.offsetHeight,mobileMenuPanel.classList.remove("translate-x-full"),menuBtn.setAttribute("aria-expanded","true")}function closeMenu(){mobileMenuPanel.classList.add("translate-x-full"),menuBtn.setAttribute("aria-expanded","false"),setTimeout(()=>{mobileMenu.classList.add("hidden"),body.classList.remove("menu-open")},300)}menuBtn&&(menuBtn.onclick=openMenu),closeBtn&&(closeBtn.onclick=closeMenu),mobileMenu&&(mobileMenu.onclick=e=>{e.target===mobileMenu&&closeMenu()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&!mobileMenu.classList.contains("hidden")&&closeMenu()})</script><div id=lightbox class="fixed inset-0 bg-black/90 z-50 hidden items-center justify-center p-4"><button id=lightbox-close class="absolute top-4 right-4 text-white hover:text-gray-300 transition-colors" aria-label=Schließen>
+<svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18 18 6M6 6l12 12"/></svg>
+</button>
+<img id=lightbox-img src alt class="max-h-[90vh] max-w-[90vw] object-contain rounded-lg"></div><script>const lightbox=document.getElementById("lightbox"),lightboxImg=document.getElementById("lightbox-img"),lightboxClose=document.getElementById("lightbox-close");document.querySelectorAll("article img").forEach(e=>{e.addEventListener("click",()=>{lightboxImg.src=e.src,lightboxImg.alt=e.alt,lightbox.classList.remove("hidden"),lightbox.classList.add("flex"),document.body.classList.add("lightbox-open")})});function closeLightbox(){lightbox.classList.add("hidden"),lightbox.classList.remove("flex"),document.body.classList.remove("lightbox-open")}lightboxClose.addEventListener("click",closeLightbox),lightbox.addEventListener("click",e=>{e.target===lightbox&&closeLightbox()}),document.addEventListener("keydown",e=>{e.key==="Escape"&&!lightbox.classList.contains("hidden")&&closeLightbox()})</script></body></html>
