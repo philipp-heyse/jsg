@@ -208,7 +208,8 @@
  */
 
 .jsg-card {
-  display: block;
+  display: flex;
+  flex-direction: column;
   padding: var(--jsg-space-6);
   border: 1px solid var(--jsg-color-border-base);
   border-radius: var(--jsg-radius-lg);
@@ -262,6 +263,7 @@
 }
 
 .jsg-card__body {
+  flex: 1 1 auto; /* wächst → gleich hohe Karten im Grid, __cta bleibt unten */
   margin: 0;
   color: var(--jsg-color-text-muted);
   font-size: var(--jsg-font-size-sm);

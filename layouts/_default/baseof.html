@@ -186,25 +186,31 @@
 
 <body class="bg-background text-primary antialiased">
   <!-- Header -->
-  <header class="bg-white border-b border-gray-200 sticky top-0 z-40 shadow-sm">
+  <header class="jsg-header">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center justify-between h-16">
+      <div class="jsg-header__inner">
         <!-- Logo -->
         <a href="{{ .Site.Home.Permalink }}" class="flex-shrink-0 transition-opacity hover:opacity-80">
           <img src="{{ "logo.png" | absURL }}" alt="JSG Hohe Warte Logo" class="h-10 w-auto">
         </a>
 
         <!-- Desktop Navigation -->
-        <nav class="hidden md:flex items-center space-x-8">
-          {{ $exclude := slice "impressum" "kontakt" "datenschutz" "waldkicker" }}
-          {{ range .Site.Sections }}
-          {{ if not (in $exclude .Section) }}
-          <a href="{{ .RelPermalink }}"
-            class="text-sm font-medium transition-colors hover:text-accent-blue {{ if $.CurrentSection }}{{ if eq .RelPermalink $.CurrentSection.RelPermalink }}text-accent-blue font-semibold{{ else }}text-primary{{ end }}{{ else }}text-primary{{ end }}">
-            {{ .Title }}
-          </a>
-          {{ end }}
-          {{ end }}
+        <nav class="hidden md:block jsg-navbar">
+          <ul class="jsg-navbar__list">
+            {{ $exclude := slice "impressum" "kontakt" "datenschutz" "waldkicker" }}
+            {{ range .Site.Sections }}
+            {{ if not (in $exclude .Section) }}
+            {{ $isActive := and $.CurrentSection (eq .RelPermalink $.CurrentSection.RelPermalink) }}
+            <li>
+              <a href="{{ .RelPermalink }}"
+                class="jsg-navbar__link{{ if $isActive }} jsg-navbar__link--active{{ end }}"
+                {{ if $isActive }}aria-current="page"{{ end }}>
+                {{ .Title }}
+              </a>
+            </li>
+            {{ end }}
+            {{ end }}
+          </ul>
         </nav>
 
         <!-- Mobile Menu Button -->
@@ -279,16 +285,19 @@
   {{ $children := where $current.Pages "Kind" "page" }}
   {{ $sorted := sort $children "Weight" "Title" }}
   {{ if $sorted }}
-  <div class="hidden md:block bg-gray-50 border-b border-gray-200">
+  <div class="hidden md:block jsg-subnav">
     <div class="max-w-container mx-auto px-4 sm:px-6 lg:px-8">
-      <div class="flex items-center space-x-6 py-3 overflow-x-auto">
+      <ul class="jsg-subnav__list">
         {{ range $p := $sorted }}
-        <a href="{{ $p.RelPermalink }}"
-          class="text-sm font-medium whitespace-nowrap transition-colors {{ if eq .RelPermalink $.RelPermalink }}text-accent-red{{ else }}text-muted hover:text-primary{{ end }}">
-          {{ $p.Title }}
-        </a>
+        <li>
+          <a href="{{ $p.RelPermalink }}"
+            class="jsg-subnav__link{{ if eq .RelPermalink $.RelPermalink }} jsg-subnav__link--active{{ end }}"
+            {{ if eq .RelPermalink $.RelPermalink }}aria-current="page"{{ end }}>
+            {{ $p.Title }}
+          </a>
+        </li>
         {{ end }}
-      </div>
+      </ul>
     </div>
   </div>
   {{ end }}
@@ -313,7 +322,7 @@
         <a class="jsg-footer__link" href="https://www.instagram.com/jsghohewarte/" target="_blank"
           rel="noopener">Instagram</a>
       </nav>
-      <p class="jsg-footer__note">© {{ now.Year }} JSG Hohe Warte · Built with Hugo</p>
+      <p class="jsg-footer__note">© {{ now.Year }} JSG Hohe Warte</p>
     </div>
   </footer>
 

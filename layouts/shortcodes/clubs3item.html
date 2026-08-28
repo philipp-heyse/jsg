@@ -4,42 +4,36 @@
 {{- $departments := .Get "departments" -}} {{/* z.B. "Fußball, Handball, ..." */}}
 {{- $logo := .Get "logo" -}} {{/* Dateiname in assets/logos/… (SVG/PNG) oder Pfad unter static/… */}}
 
-<article role="listitem" class="h-full">
-  <a class="h-full grid grid-rows-[auto_auto_1fr_auto] gap-2 p-4 sm:p-5 border border-gray-200 rounded-xl no-underline text-inherit bg-white transition-all duration-150 hover:-translate-y-0.5 hover:shadow-lg hover:border-gray-300"
-    href="{{ $link }}" target="_blank" rel="noopener">
-    <span class="w-10 h-10" aria-hidden="true">
-      {{- if $logo -}}
-      {{- $try := resources.Get (printf "logos/%s" $logo) -}}
-      {{- if $try -}}
-      {{- /* Inline-SVG bevorzugen (färbbar via CSS); PNG/JPG werden als <img> ausgegeben */ -}}
-      {{- if eq (lower (path.Ext $try.Name)) ".svg" -}}
-      {{ $try.Content | safeHTML }}
-      {{- else -}}
-      <img src="{{ $try.RelPermalink }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
-      {{- end -}}
-      {{- else -}}
-      {{- /* Fallback: wenn $logo kein Asset ist, als (statischer) Pfad rendern */ -}}
-      <img src="{{ $logo | relURL }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
-      {{- end -}}
-      {{- end -}}
-    </span>
+<a class="jsg-card jsg-card--interactive" role="listitem" href="{{ $link }}" target="_blank" rel="noopener">
+  <span class="jsg-card__icon" aria-hidden="true">
+    {{- if $logo -}}
+    {{- $try := resources.Get (printf "logos/%s" $logo) -}}
+    {{- if $try -}}
+    {{- if eq (lower (path.Ext $try.Name)) ".svg" -}}
+    {{ $try.Content | safeHTML }}
+    {{- else -}}
+    <img src="{{ $try.RelPermalink }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
+    {{- end -}}
+    {{- else -}}
+    <img src="{{ $logo | relURL }}" alt="{{ $title }} Logo" class="w-10 h-10 object-contain block" />
+    {{- end -}}
+    {{- end -}}
+  </span>
 
-    <h3 class="my-1 font-extrabold text-base sm:text-lg">{{ $title }}</h3>
+  <h3 class="jsg-card__title">{{ $title }}</h3>
 
-    <div>
-      {{- if or $members $departments -}}
-      <p class="m-0 text-gray-700 text-sm">
-        {{- with $members -}}Mitglieder: {{ . }}{{ end -}}
-        {{- if and $members $departments -}} · {{ end -}}
-        {{- with $departments -}}Abteilungen: {{ . }}{{ end -}}
-      </p>
-      {{- end -}}
+  <div class="jsg-card__body">
+    {{- if or $members $departments -}}
+    <p class="m-0">
+      {{- with $members -}}Mitglieder: {{ . }}{{ end -}}
+      {{- if and $members $departments -}} · {{ end -}}
+      {{- with $departments -}}Abteilungen: {{ . }}{{ end -}}
+    </p>
+    {{- end -}}
+    {{- with .Inner -}}
+    <p>{{ . | markdownify }}</p>
+    {{- end -}}
+  </div>
 
-      {{- with .Inner -}}
-      <p class="text-gray-700 text-sm">{{ . | markdownify }}</p>
-      {{- end -}}
-    </div>
-
-    <span class="mt-1 font-semibold text-primary text-sm" aria-hidden="true">Zum Stammverein →</span>
-  </a>
-</article>
+  <span class="jsg-card__cta" aria-hidden="true">Zum Stammverein →</span>
+</a>

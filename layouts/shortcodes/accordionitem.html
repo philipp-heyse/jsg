@@ -3,12 +3,11 @@
 {{- $id := .Get "id" | default "" -}}
 {{- $isOpen := or (eq (lower $open) "true") (eq $open "1") -}}
 
-<details class="border border-gray-200 rounded-xl bg-white" data-accordion-item {{ if $isOpen }}open{{ end }} {{ if $id
-  }}id="{{ $id }}" {{ end }}>
-  <summary class="cursor-pointer p-3 sm:p-4 font-bold list-none hover:bg-gray-50" data-accordion-summary>
+<details class="jsg-accordion__item" data-accordion-item {{ if $isOpen }}open{{ end }} {{ if $id }}id="{{ $id }}"{{ end }}>
+  <summary class="jsg-accordion__summary" data-accordion-summary>
     <span>{{ $title }}</span>
   </summary>
-  <div class="px-3 sm:px-4 pb-3 sm:pb-4 text-gray-700" data-accordion-panel>
+  <div class="jsg-accordion__panel" data-accordion-panel>
     {{ .Inner | markdownify }}
   </div>
 </details>
