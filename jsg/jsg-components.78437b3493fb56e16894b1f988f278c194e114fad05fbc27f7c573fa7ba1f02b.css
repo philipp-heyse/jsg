@@ -1,0 +1,984 @@
+/* @jsg/css — generiert von build.mjs. Nicht von Hand bearbeiten. */
+
+/* --- components/accordion.css --- */
+/*
+ * jsg-accordion — Ausklappliste auf Basis von nativem <details>/<summary> (kein JS).
+ *
+ * Markup:
+ *   <div class="jsg-accordion">
+ *     <details class="jsg-accordion__item">
+ *       <summary class="jsg-accordion__summary">Frage?</summary>
+ *       <div class="jsg-accordion__panel">Antwort …</div>
+ *     </details>
+ *   </div>
+ */
+
+.jsg-accordion {
+  display: grid;
+  gap: var(--jsg-space-3);
+}
+
+.jsg-accordion__item {
+  border: 1px solid var(--jsg-color-border-base);
+  border-radius: var(--jsg-radius-lg);
+  background: var(--jsg-color-surface-base);
+}
+
+.jsg-accordion__summary {
+  padding: var(--jsg-space-3) var(--jsg-space-4);
+  font-weight: var(--jsg-font-weight-semibold);
+  cursor: pointer;
+}
+
+.jsg-accordion__summary:hover {
+  background: var(--jsg-color-surface-muted);
+}
+
+.jsg-accordion__panel {
+  padding: 0 var(--jsg-space-4) var(--jsg-space-4);
+  color: var(--jsg-color-text-muted);
+}
+
+/* --- components/alert.css --- */
+/*
+ * jsg-alert — farbcodierte Status-/Hinweisbox. Varianten: success/error/info/warning.
+ * Ersetzt die überall im Portal duplizierten Inline-Boxen.
+ *
+ * Markup:
+ *   <div class="jsg-alert jsg-alert--success" role="status">
+ *     <p class="jsg-alert__title">Vielen Dank!</p>
+ *     Wir haben deine Anfrage erhalten.
+ *   </div>
+ */
+
+.jsg-alert {
+  padding: var(--jsg-space-4);
+  border: 1px solid var(--jsg-color-border-base);
+  border-radius: var(--jsg-radius-lg);
+  font-size: var(--jsg-font-size-sm);
+}
+
+.jsg-alert__title {
+  margin: 0 0 var(--jsg-space-1);
+  font-weight: var(--jsg-font-weight-semibold);
+}
+
+.jsg-alert--success {
+  border-color: var(--jsg-color-success-200);
+  background: var(--jsg-color-success-50);
+  color: var(--jsg-color-success-800);
+}
+
+.jsg-alert--error {
+  border-color: var(--jsg-color-danger-200);
+  background: var(--jsg-color-danger-50);
+  color: var(--jsg-color-danger-700);
+}
+
+.jsg-alert--info {
+  border-color: var(--jsg-color-primary-300);
+  background: var(--jsg-color-primary-50);
+  color: var(--jsg-color-primary-700);
+}
+
+.jsg-alert--warning {
+  border-color: var(--jsg-color-warning-200);
+  background: var(--jsg-color-warning-50);
+  color: var(--jsg-color-warning-800);
+}
+
+/* --- components/badge.css --- */
+/*
+ * jsg-badge — kleiner Status-Chip. Varianten: neutral (Default), info/success/warning/danger.
+ *
+ * Markup:
+ *   <span class="jsg-badge jsg-badge--success">genehmigt</span>
+ */
+
+.jsg-badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--jsg-space-1) var(--jsg-space-3);
+  border-radius: var(--jsg-radius-full);
+  background: var(--jsg-color-surface-sunken);
+  color: var(--jsg-color-gray-700);
+  font-size: var(--jsg-font-size-xs);
+  font-weight: var(--jsg-font-weight-medium);
+  white-space: nowrap;
+}
+
+.jsg-badge--info {
+  background: var(--jsg-color-primary-100);
+  color: var(--jsg-color-primary-700);
+}
+
+.jsg-badge--success {
+  background: var(--jsg-color-success-200);
+  color: var(--jsg-color-success-800);
+}
+
+.jsg-badge--warning {
+  background: var(--jsg-color-warning-200);
+  color: var(--jsg-color-warning-800);
+}
+
+.jsg-badge--danger {
+  background: var(--jsg-color-danger-100);
+  color: var(--jsg-color-danger-700);
+}
+
+/* --- components/button.css --- */
+/*
+ * jsg-button — Schaltfläche. Varianten: primär (Default), sekundär, outline.
+ * Fokus-Styles kommen aus base/reset.css (:focus-visible).
+ *
+ * Markup:
+ *   <button class="jsg-button jsg-button--primary">Absenden</button>
+ *   <a class="jsg-button jsg-button--outline" href="#">Mehr erfahren</a>
+ */
+
+.jsg-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--jsg-space-2);
+  min-block-size: 2.75rem; /* ≥ 44px Tap-Target (ADR-008) */
+  padding: var(--jsg-space-2) var(--jsg-space-4);
+  border: 1px solid transparent;
+  border-radius: var(--jsg-radius-md);
+  font-family: var(--jsg-font-family-body);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  line-height: 1;
+  text-decoration: none;
+  cursor: pointer;
+  transition:
+    background-color 0.15s ease,
+    border-color 0.15s ease,
+    color 0.15s ease;
+}
+
+.jsg-button:disabled,
+.jsg-button[aria-disabled='true'] {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.jsg-button--primary {
+  background: var(--jsg-color-primary-600);
+  color: var(--jsg-color-text-inverse);
+}
+
+.jsg-button--primary:hover {
+  background: var(--jsg-color-primary-700);
+}
+
+.jsg-button--secondary {
+  background: var(--jsg-color-surface-sunken);
+  color: var(--jsg-color-text-base);
+}
+
+.jsg-button--secondary:hover {
+  background: var(--jsg-color-gray-200);
+}
+
+.jsg-button--outline {
+  background: var(--jsg-color-surface-base);
+  border-color: var(--jsg-color-border-strong);
+  color: var(--jsg-color-text-base);
+}
+
+.jsg-button--outline:hover {
+  background: var(--jsg-color-surface-muted);
+}
+
+/* --- components/card.css --- */
+/*
+ * jsg-card — Karte/Container. Modifier --interactive für klickbare Karten (Link/Button).
+ * Hover ist Enhancement für Pointer-Geräte; Touch bekommt :active-Feedback (ADR-007).
+ * Elemente: __icon, __title, __body, __cta.
+ *
+ * Markup:
+ *   <a class="jsg-card jsg-card--interactive" href="#">
+ *     <span class="jsg-card__icon">…svg…</span>
+ *     <h3 class="jsg-card__title">Titel</h3>
+ *     <p class="jsg-card__body">Beschreibung</p>
+ *     <span class="jsg-card__cta">Mehr</span>
+ *   </a>
+ */
+
+.jsg-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--jsg-space-6);
+  border: 1px solid var(--jsg-color-border-base);
+  border-radius: var(--jsg-radius-lg);
+  background: var(--jsg-color-surface-base);
+  box-shadow: var(--jsg-shadow-sm);
+  color: inherit;
+  text-decoration: none;
+}
+
+.jsg-card--interactive {
+  transition:
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    border-color 0.15s ease;
+}
+
+/* Hover nur auf Pointer-Geräten — Touch klebt sonst im Hover-Zustand. */
+@media (hover: hover) {
+  .jsg-card--interactive:hover {
+    border-color: var(--jsg-color-primary-300);
+    box-shadow: var(--jsg-shadow-md);
+    transform: translateY(-2px);
+  }
+}
+
+.jsg-card--interactive:active {
+  transform: scale(0.99);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .jsg-card--interactive {
+    transition: none;
+  }
+
+  .jsg-card--interactive:hover,
+  .jsg-card--interactive:active {
+    transform: none;
+  }
+}
+
+.jsg-card__icon {
+  display: inline-flex;
+  margin-block-end: var(--jsg-space-3);
+  color: var(--jsg-color-primary-600);
+}
+
+.jsg-card__title {
+  margin: 0 0 var(--jsg-space-2);
+  font-size: var(--jsg-font-size-lg);
+  font-weight: var(--jsg-font-weight-semibold);
+}
+
+.jsg-card__body {
+  flex: 1 1 auto; /* wächst → gleich hohe Karten im Grid, __cta bleibt unten */
+  margin: 0;
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+}
+
+.jsg-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--jsg-space-1);
+  margin-block-start: var(--jsg-space-3);
+  color: var(--jsg-color-text-link);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-semibold);
+}
+
+/*
+ * jsg-card-grid — responsives Karten-Raster, mobile-first: 1 Spalte, ab md 3 Spalten.
+ * 768px = --jsg-screen-md (Media Queries können keine Custom Properties lesen).
+ */
+.jsg-card-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--jsg-space-5);
+}
+
+@media (width >= 768px) {
+  .jsg-card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* --- components/checkbox.css --- */
+/*
+ * jsg-checkbox — Kontrollkästchen mit Label, optionaler Beschreibung und Fehlermeldung.
+ *
+ * Markup:
+ *   <div class="jsg-checkbox">
+ *     <div class="jsg-checkbox__row">
+ *       <input class="jsg-checkbox__input" type="checkbox" id="foto" />
+ *       <div>
+ *         <label class="jsg-checkbox__label" for="foto">Fotoveröffentlichung</label>
+ *         <p class="jsg-checkbox__description">Wir dürfen Fotos veröffentlichen.</p>
+ *       </div>
+ *     </div>
+ *     <p class="jsg-checkbox__error">Einwilligung ist erforderlich</p>
+ *   </div>
+ */
+
+.jsg-checkbox {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jsg-space-1);
+}
+
+.jsg-checkbox__row {
+  display: flex;
+  align-items: flex-start;
+  gap: var(--jsg-space-3);
+}
+
+.jsg-checkbox__input {
+  flex-shrink: 0;
+  inline-size: 1.15rem;
+  block-size: 1.15rem;
+  margin-block-start: 0.1rem;
+  accent-color: var(--jsg-color-primary-600);
+}
+
+.jsg-checkbox__label {
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  color: var(--jsg-color-gray-700);
+  cursor: pointer;
+}
+
+.jsg-checkbox__required {
+  color: var(--jsg-color-danger-500);
+}
+
+.jsg-checkbox__description {
+  margin: 0;
+  font-size: var(--jsg-font-size-sm);
+  color: var(--jsg-color-text-muted);
+}
+
+.jsg-checkbox__error {
+  margin: 0;
+  font-size: var(--jsg-font-size-sm);
+  color: var(--jsg-color-danger-600);
+}
+
+/* --- components/cta.css --- */
+/*
+ * jsg-cta — Handlungsaufruf-Banner am Seitenende.
+ *
+ * Markup:
+ *   <section class="jsg-cta">
+ *     <h2 class="jsg-cta__title">Hier kannst du mitspielen!</h2>
+ *     <p class="jsg-cta__text">Lust auf ein Probetraining?</p>
+ *     <div class="jsg-cta__actions"><a class="jsg-button jsg-button--primary" href="#">Anpfiff</a></div>
+ *   </section>
+ */
+
+.jsg-cta {
+  padding: var(--jsg-space-8);
+  border-radius: var(--jsg-radius-lg);
+  background: var(--jsg-color-surface-muted);
+  text-align: center;
+}
+
+.jsg-cta__title {
+  margin: 0;
+  font-size: var(--jsg-font-size-2xl);
+  font-weight: var(--jsg-font-weight-bold);
+}
+
+.jsg-cta__text {
+  margin: var(--jsg-space-2) 0 0;
+  color: var(--jsg-color-text-muted);
+}
+
+.jsg-cta__actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--jsg-space-3);
+  margin-block-start: var(--jsg-space-6);
+}
+
+/* --- components/data-row.css --- */
+/*
+ * jsg-data-row — Label/Wert-Zeile für Zusammenfassungen (Bestätigungs-Schritt).
+ * Für Ja/Nein-Werte optional --yes / --no am Value.
+ *
+ * Markup:
+ *   <div class="jsg-data-row">
+ *     <span class="jsg-data-row__label">Vorname</span>
+ *     <span class="jsg-data-row__value">Mia</span>
+ *   </div>
+ */
+
+.jsg-data-row {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--jsg-space-4);
+  padding-block: var(--jsg-space-2);
+  border-block-end: 1px solid var(--jsg-color-border-base);
+}
+
+.jsg-data-row__label {
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+}
+
+.jsg-data-row__value {
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  text-align: end;
+}
+
+.jsg-data-row__value--yes {
+  color: var(--jsg-color-success-600);
+}
+
+.jsg-data-row__value--no {
+  color: var(--jsg-color-danger-500);
+}
+
+/* --- components/divider.css --- */
+/*
+ * jsg-divider — horizontaler Trenner. Variante --labeled mit zentriertem Label.
+ *
+ * Markup:
+ *   <hr class="jsg-divider" />
+ *
+ *   <div class="jsg-divider jsg-divider--labeled" role="separator">
+ *     <span class="jsg-divider__label">oder</span>
+ *   </div>
+ */
+
+.jsg-divider {
+  border: 0;
+  border-top: 1px solid var(--jsg-color-border-base);
+  margin: var(--jsg-space-4) 0;
+}
+
+.jsg-divider--labeled {
+  display: flex;
+  align-items: center;
+  gap: var(--jsg-space-3);
+  border-top: 0;
+}
+
+.jsg-divider--labeled::before,
+.jsg-divider--labeled::after {
+  content: '';
+  flex: 1;
+  border-top: 1px solid var(--jsg-color-border-base);
+}
+
+.jsg-divider__label {
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  white-space: nowrap;
+}
+
+/* --- components/field.css --- */
+/*
+ * jsg-field — Formularfeld: Label + Steuerelement (Input/Select) + optionale Fehlermeldung.
+ * Modifier --error färbt den Rahmen. Fokus-Outline kommt aus base/reset.css.
+ *
+ * Markup:
+ *   <div class="jsg-field">
+ *     <label class="jsg-field__label" for="vorname">Vorname <span class="jsg-field__required">*</span></label>
+ *     <input class="jsg-field__control" id="vorname" />
+ *     <p class="jsg-field__error">Vorname ist erforderlich</p>
+ *   </div>
+ */
+
+.jsg-field {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jsg-space-1);
+}
+
+.jsg-field__label {
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  color: var(--jsg-color-gray-700);
+}
+
+.jsg-field__required {
+  color: var(--jsg-color-danger-500);
+}
+
+.jsg-field__control {
+  inline-size: 100%;
+  min-block-size: 2.75rem;
+  padding: var(--jsg-space-2) var(--jsg-space-3);
+  border: 1px solid var(--jsg-color-border-strong);
+  border-radius: var(--jsg-radius-md);
+  background: var(--jsg-color-surface-base);
+  color: var(--jsg-color-text-base);
+  font-family: var(--jsg-font-family-body);
+  font-size: var(--jsg-font-size-sm);
+  box-shadow: var(--jsg-shadow-sm);
+}
+
+.jsg-field__control::placeholder {
+  color: var(--jsg-color-gray-400);
+}
+
+.jsg-field__control:focus-visible {
+  border-color: var(--jsg-color-border-focus);
+}
+
+.jsg-field--error .jsg-field__control {
+  border-color: var(--jsg-color-danger-500);
+}
+
+.jsg-field__error {
+  margin: 0;
+  font-size: var(--jsg-font-size-sm);
+  color: var(--jsg-color-danger-600);
+}
+
+/* --- components/fieldset.css --- */
+/*
+ * jsg-fieldset — gruppierter Formularabschnitt mit Legende.
+ *
+ * Markup:
+ *   <fieldset class="jsg-fieldset">
+ *     <legend class="jsg-fieldset__legend">Adresse</legend>
+ *     … Felder …
+ *   </fieldset>
+ */
+
+.jsg-fieldset {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jsg-space-4);
+  min-inline-size: 0;
+  padding: var(--jsg-space-4);
+  border: 1px solid var(--jsg-color-border-base);
+  border-radius: var(--jsg-radius-lg);
+}
+
+.jsg-fieldset__legend {
+  padding-inline: var(--jsg-space-2);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  color: var(--jsg-color-gray-700);
+}
+
+/* --- components/footer.css --- */
+/*
+ * jsg-footer — Fußzeile: Links + Copyright/Claim, zentriert.
+ *
+ * Markup:
+ *   <footer class="jsg-footer">
+ *     <div class="jsg-container jsg-container--md">
+ *       <nav class="jsg-footer__links">
+ *         <a class="jsg-footer__link" href="/impressum">Impressum</a>
+ *         <a class="jsg-footer__link" href="/kontakt">Kontakt</a>
+ *       </nav>
+ *       <p class="jsg-footer__note">© 2026 JSG Hohe Warte</p>
+ *     </div>
+ *   </footer>
+ */
+
+.jsg-footer {
+  padding-block: var(--jsg-space-6);
+  border-block-start: 1px solid var(--jsg-color-border-base);
+  background: var(--jsg-color-surface-base);
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+  text-align: center;
+}
+
+.jsg-footer__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: var(--jsg-space-2) var(--jsg-space-4);
+}
+
+.jsg-footer__link {
+  color: var(--jsg-color-text-link);
+  text-decoration: none;
+}
+
+.jsg-footer__link:hover {
+  text-decoration: underline;
+}
+
+.jsg-footer__note {
+  margin: var(--jsg-space-2) 0 0;
+}
+
+/* --- components/header.css --- */
+/*
+ * jsg-header — Kopfzeile: Marke links, optionaler Slot (Navigation) rechts. Sticky.
+ *
+ * Markup:
+ *   <header class="jsg-header">
+ *     <div class="jsg-header__inner jsg-container jsg-container--md">
+ *       <a class="jsg-header__brand" href="/"><img … /> JSG Hohe Warte</a>
+ *       … Navigation …
+ *     </div>
+ *   </header>
+ */
+
+.jsg-header {
+  position: sticky;
+  inset-block-start: 0;
+  z-index: 40;
+  border-block-end: 1px solid var(--jsg-color-border-base);
+  background: var(--jsg-color-surface-base);
+  box-shadow: var(--jsg-shadow-sm);
+}
+
+.jsg-header__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--jsg-space-4);
+  min-block-size: 4rem;
+}
+
+.jsg-header__brand {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--jsg-space-3);
+  color: var(--jsg-color-text-base);
+  font-weight: var(--jsg-font-weight-semibold);
+  text-decoration: none;
+}
+
+/* --- components/hero.css --- */
+/*
+ * jsg-hero — Kopfblock einer Seite: Headline, Subline, Aktionen.
+ *
+ * Markup:
+ *   <section class="jsg-hero">
+ *     <h1 class="jsg-hero__title">Fußball mit Freunden</h1>
+ *     <p class="jsg-hero__subtitle">Wir bolzen. Wir rackern. Wir halten zusammen.</p>
+ *     <div class="jsg-hero__actions"><a class="jsg-button jsg-button--primary" href="#">Mitspielen</a></div>
+ *   </section>
+ */
+
+.jsg-hero {
+  padding-block: var(--jsg-space-12) var(--jsg-space-10);
+}
+
+.jsg-hero__title {
+  margin: 0;
+  font-size: var(--jsg-font-size-4xl);
+  font-weight: var(--jsg-font-weight-extrabold);
+  line-height: var(--jsg-leading-tight);
+}
+
+.jsg-hero__subtitle {
+  margin: var(--jsg-space-3) 0 0;
+  font-size: var(--jsg-font-size-lg);
+  color: var(--jsg-color-text-muted);
+}
+
+.jsg-hero__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--jsg-space-3);
+  margin-block-start: var(--jsg-space-6);
+}
+
+/* --- components/media.css --- */
+/*
+ * jsg-media — Text-Bild-Block. Modifier --reverse dreht die Anordnung ab 768px.
+ *
+ * Markup:
+ *   <div class="jsg-media">
+ *     <div class="jsg-media__body">
+ *       <h3 class="jsg-media__title">Überschrift</h3>
+ *       <p>Text …</p>
+ *     </div>
+ *     <div class="jsg-media__figure"><img class="jsg-media__image" src="…" alt="…" /></div>
+ *   </div>
+ */
+
+.jsg-media {
+  display: flex;
+  flex-direction: column;
+  gap: var(--jsg-space-6);
+}
+
+.jsg-media__body {
+  color: var(--jsg-color-text-base);
+}
+
+.jsg-media__title {
+  margin: 0 0 var(--jsg-space-2);
+  font-size: var(--jsg-font-size-xl);
+  font-weight: var(--jsg-font-weight-bold);
+}
+
+.jsg-media__image {
+  inline-size: 100%;
+  block-size: auto;
+  border-radius: var(--jsg-radius-lg);
+}
+
+@media (width >= 768px) {
+  .jsg-media {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .jsg-media__body,
+  .jsg-media__figure {
+    flex: 1;
+  }
+
+  .jsg-media--reverse {
+    flex-direction: row-reverse;
+  }
+}
+
+/* --- components/navbar.css --- */
+/*
+ * jsg-navbar — horizontale Navigation, optional mit zweiter Ebene (jsg-subnav).
+ * Aktiver Link über --active. Mobil (Off-Canvas/Drawer) ist App-Sache (React-only).
+ *
+ * Markup:
+ *   <nav class="jsg-navbar">
+ *     <ul class="jsg-navbar__list">
+ *       <li><a class="jsg-navbar__link jsg-navbar__link--active" href="/teams">Teams</a></li>
+ *       <li><a class="jsg-navbar__link" href="/training">Training</a></li>
+ *     </ul>
+ *   </nav>
+ */
+
+.jsg-navbar__list {
+  display: flex;
+  align-items: center;
+  gap: var(--jsg-space-6);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.jsg-navbar__link {
+  color: var(--jsg-color-text-base);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  text-decoration: none;
+}
+
+.jsg-navbar__link:hover {
+  color: var(--jsg-color-primary-600);
+}
+
+.jsg-navbar__link--active {
+  color: var(--jsg-color-primary-600);
+  font-weight: var(--jsg-font-weight-semibold);
+}
+
+/* Zweite Ebene */
+.jsg-subnav {
+  border-block-end: 1px solid var(--jsg-color-border-base);
+  background: var(--jsg-color-surface-muted);
+}
+
+.jsg-subnav__list {
+  display: flex;
+  gap: var(--jsg-space-5);
+  margin: 0;
+  padding: var(--jsg-space-3) 0;
+  overflow-x: auto;
+  list-style: none;
+}
+
+.jsg-subnav__link {
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+  white-space: nowrap;
+  text-decoration: none;
+}
+
+.jsg-subnav__link:hover {
+  color: var(--jsg-color-text-base);
+}
+
+.jsg-subnav__link--active {
+  color: var(--jsg-color-primary-600);
+}
+
+/* --- components/section.css --- */
+/*
+ * jsg-section — vertikaler Inhaltsblock mit optionalem Kopf (Titel + Einleitung).
+ *
+ * Markup:
+ *   <section class="jsg-section">
+ *     <div class="jsg-section__header">
+ *       <h2 class="jsg-section__title">Überschrift</h2>
+ *       <p class="jsg-section__intro">Kurze Einleitung.</p>
+ *     </div>
+ *     … Inhalt …
+ *   </section>
+ */
+
+.jsg-section {
+  padding-block: var(--jsg-space-10);
+}
+
+.jsg-section__header {
+  margin-block-end: var(--jsg-space-8);
+}
+
+.jsg-section__title {
+  margin: 0;
+  font-size: var(--jsg-font-size-2xl);
+  font-weight: var(--jsg-font-weight-bold);
+}
+
+.jsg-section__intro {
+  margin: var(--jsg-space-2) 0 0;
+  color: var(--jsg-color-text-muted);
+}
+
+/* --- components/stats.css --- */
+/*
+ * jsg-stats — Kennzahlen-Raster (mobile-first: 1 → ab 768px 3 Spalten).
+ *
+ * Markup:
+ *   <div class="jsg-stats">
+ *     <div class="jsg-stat">
+ *       <span class="jsg-stat__icon">…svg…</span>
+ *       <span class="jsg-stat__value">2021</span>
+ *       <span class="jsg-stat__label">Gründung</span>
+ *     </div>
+ *   </div>
+ */
+
+.jsg-stats {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--jsg-space-4);
+}
+
+@media (width >= 768px) {
+  .jsg-stats {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.jsg-stat {
+  display: grid;
+  justify-items: center;
+  gap: var(--jsg-space-1);
+  padding: var(--jsg-space-4);
+  border: 1px solid var(--jsg-color-border-base);
+  border-radius: var(--jsg-radius-lg);
+  background: var(--jsg-color-surface-base);
+  text-align: center;
+}
+
+.jsg-stat__icon {
+  display: inline-flex;
+  color: var(--jsg-color-primary-600);
+}
+
+.jsg-stat__value {
+  font-size: var(--jsg-font-size-2xl);
+  font-weight: var(--jsg-font-weight-extrabold);
+  line-height: var(--jsg-leading-tight);
+}
+
+.jsg-stat__label {
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-xs);
+  font-weight: var(--jsg-font-weight-semibold);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* --- components/stepper.css --- */
+/*
+ * jsg-stepper — Fortschrittsanzeige für mehrstufige Formulare.
+ * Item-Modifier --done (erledigt) / --active (aktuell). Labels ab 640px sichtbar.
+ *
+ * Markup:
+ *   <nav class="jsg-stepper" aria-label="Fortschritt">
+ *     <ol class="jsg-stepper__list">
+ *       <li class="jsg-stepper__item jsg-stepper__item--done">
+ *         <span class="jsg-stepper__marker">✓</span>
+ *         <span class="jsg-stepper__label">Kind</span>
+ *         <span class="jsg-stepper__line"></span>
+ *       </li>
+ *       …
+ *     </ol>
+ *   </nav>
+ */
+
+.jsg-stepper__list {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.jsg-stepper__item {
+  display: flex;
+  align-items: center;
+  gap: var(--jsg-space-2);
+}
+
+.jsg-stepper__item:not(:last-child) {
+  flex: 1;
+}
+
+.jsg-stepper__marker {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  justify-content: center;
+  inline-size: 2rem;
+  block-size: 2rem;
+  border: 2px solid var(--jsg-color-border-strong);
+  border-radius: var(--jsg-radius-full);
+  background: var(--jsg-color-surface-base);
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+  font-weight: var(--jsg-font-weight-medium);
+}
+
+.jsg-stepper__label {
+  color: var(--jsg-color-text-muted);
+  font-size: var(--jsg-font-size-sm);
+  white-space: nowrap;
+}
+
+.jsg-stepper__line {
+  flex: 1;
+  block-size: 2px;
+  margin-inline: var(--jsg-space-2);
+  background: var(--jsg-color-border-strong);
+}
+
+.jsg-stepper__item--done .jsg-stepper__marker {
+  border-color: var(--jsg-color-primary-600);
+  background: var(--jsg-color-primary-600);
+  color: var(--jsg-color-text-inverse);
+}
+
+.jsg-stepper__item--done .jsg-stepper__line {
+  background: var(--jsg-color-primary-600);
+}
+
+.jsg-stepper__item--active .jsg-stepper__marker {
+  border-color: var(--jsg-color-primary-600);
+  color: var(--jsg-color-primary-600);
+}
+
+.jsg-stepper__item--done .jsg-stepper__label,
+.jsg-stepper__item--active .jsg-stepper__label {
+  color: var(--jsg-color-text-base);
+  font-weight: var(--jsg-font-weight-medium);
+}
+
+/* Labels erst ab 640px (= --jsg-screen-sm) — mobil nur die Marker. */
+@media (width < 640px) {
+  .jsg-stepper__label {
+    display: none;
+  }
+}
+
