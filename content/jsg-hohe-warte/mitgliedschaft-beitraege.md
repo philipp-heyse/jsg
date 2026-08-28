@@ -51,7 +51,13 @@ Ok, das wäre jetzt der Zeitpunkt, an dem Kalauer rund um Begriffe wie *„Lehrg
 Stelle und kommen lieber direkt zum Vertraglichen:
 
 Um den Spielbetrieb im Deutschen Fußball-Bund (DFB) sowie Kosten für Trikots, Bälle, Trainer und
-Spielorte zu decken, erheben wir als JSG Hohe Warte einen Zusatzbeitrag von **100 Euro pro Kind/Jahr**.
+Spielorte zu decken, erheben wir ab der Saison 2026/2027 einen Zusatzbeitrag von
+**120 Euro pro Kind und Spieljahr**.
+
+Wie Du bezahlst, entscheidest Du:
+
+- **Per SEPA-Lastschrift:** 12 × 10 Euro, jeweils zum 1. eines Monats.
+- **Per Überweisung:** einmalig 120 Euro pro Saison.
 
 Machbar, oder? Und falls nicht: Sprecht uns bitte direkt an, damit wir gemeinsam eine Lösung finden
 und eure Kids trotzdem auf den Rasen bekommen.
@@ -63,8 +69,9 @@ und eure Kids trotzdem auf den Rasen bekommen.
 {{< accordion >}}
 
   {{< accordionitem title="Wann werden die Beiträge eingezogen?" open="true" >}}
-  In der Regel ziehen wir den Jahresbeitrag in Höhe von 100 Euro zum 1. März ein.
-  Ihr könnt aber angeben, wenn Ihr in der kommenden Saison den Beitrag lieber in zwei Raten einziehen lassen möchtet.
+  Das hängt von Deiner Zahlweise ab: Bei der **SEPA-Lastschrift** ziehen wir 12 × 10 Euro ein,
+  jeweils zum 1. eines Monats. Bei **Überweisung** zahlst Du den Jahresbeitrag von 120 Euro
+  einmalig pro Saison.
   {{< /accordionitem >}}
 
   {{< accordionitem title="Läuft der Einzug der JSG Hohe Warte parallel zu dem Jahresbetrag des Vereins oder wird dieser hiermit ersetzt?" >}}
