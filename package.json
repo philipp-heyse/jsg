@@ -4,6 +4,8 @@
   "private": true,
   "description": "Hugo-Homepage der JSG Hohe Warte",
   "scripts": {
-    "sync:tokens": "cp ../jsg-ui/packages/tokens/dist/tokens.css assets/jsg/tokens.css && echo 'assets/jsg/tokens.css aus @jsg/tokens aktualisiert'"
+    "sync": "npm run sync:tokens && npm run sync:css",
+    "sync:tokens": "cp ../jsg-ui/packages/tokens/dist/tokens.css assets/jsg/tokens.css && echo 'assets/jsg/tokens.css aus @jsg/tokens aktualisiert'",
+    "sync:css": "cp ../jsg-ui/packages/css/dist/jsg-components.css assets/jsg/jsg-components.css && echo 'assets/jsg/jsg-components.css aus @jsg/css aktualisiert'"
   }
 }
