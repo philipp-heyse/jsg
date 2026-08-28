@@ -9,26 +9,31 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  {{/* Design-Tokens aus @jsg/tokens (Single Source of Truth, siehe assets/jsg/tokens.css) */}}
+  {{ with resources.Get "jsg/tokens.css" }}
+  <link rel="stylesheet" href="{{ (. | fingerprint).RelPermalink }}">
+  {{ end }}
   <script src="https://cdn.tailwindcss.com"></script>
   <script>
     tailwind.config = {
       theme: {
         extend: {
+          // Farben & Font kommen aus @jsg/tokens (assets/jsg/tokens.css) — Single Source of Truth.
           colors: {
-            primary: '#1f2937',      // dark grey text
-            background: '#f9fafb',   // very light grey background
+            primary: 'var(--jsg-color-text-base)', // Fließtext/Headings (gray-900)
+            background: 'var(--jsg-color-surface-muted)', // Body-Hintergrund (gray-50)
             accent: {
-              blue: '#2563eb',       // blue-600
-              red: '#dc2626',        // red-600
+              blue: 'var(--jsg-color-primary-600)',
+              red: 'var(--jsg-color-danger-600)',
             },
             'accent-hover': {
-              blue: '#1d4ed8',       // blue-700
-              red: '#b91c1c',        // red-700
+              blue: 'var(--jsg-color-primary-700)',
+              red: 'var(--jsg-color-danger-700)',
             },
-            muted: '#6b7280',        // grey-500 for muted text
+            muted: 'var(--jsg-color-text-muted)', // gray-500
           },
           fontFamily: {
-            sans: ['Inter', 'ui-sans-serif', 'system-ui', '-apple-system', 'sans-serif'],
+            sans: ['var(--jsg-font-family-body)'],
           },
           maxWidth: {
             'container': '1100px',
@@ -309,11 +314,6 @@
       </div>
     </div>
   </footer>
-
-  <!-- Waldkicker Flyout (Homepage only) -->
-  {{ if .IsHome }}
-    {{ partial "waldkicker-flyout.html" . }}
-  {{ end }}
 
   <!-- Scripts -->
   <script>

@@ -1,0 +1,9 @@
+{
+  "name": "jsg-hohe-warte-homepage",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Hugo-Homepage der JSG Hohe Warte",
+  "scripts": {
+    "sync:tokens": "cp ../jsg-ui/packages/tokens/dist/tokens.css assets/jsg/tokens.css && echo 'assets/jsg/tokens.css aus @jsg/tokens aktualisiert'"
+  }
+}
