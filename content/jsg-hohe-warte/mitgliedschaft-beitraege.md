@@ -19,30 +19,6 @@ deinen Königstransfer wie folgt zugeordnet:
 
 ---
 
-{{< box3 >}}
-
-  {{< box3item title="SV 1945 Annerod e.V." link="https://hidrive.ionos.com/lnk/Wv6oFERig" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
-  Mach deine Karriere steil  
-  im Sportverein 1945 Annerod e.V.  
-  35463 Fernwald
-  {{< /box3item >}}
-
-  {{< box3item title="SV 1928 Garbenteich e.V." link="https://hidrive.ionos.com/lnk/TsxkruF3" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
-  Zeig dein Jahrhunderttalent  
-  im Sportverein 1928 Garbenteich e.V.  
-  35415 Pohlheim
-  {{< /box3item >}}
-
-  {{< box3item title="TV 1864 Hausen e.V." link="https://hidrive.ionos.com/lnk/NeRkLUqY" icon="file-text" linktext="→ Zum Mitglieds- und Passantrag" external="true" >}}
-  Dein erster Schritt zur Legende  
-  im Turnverein 1864 Hausen e.V.  
-  35415 Pohlheim
-  {{< /box3item >}}
-
-{{< /box3 >}}
-
----
-
 # SORGT FÜR DEN SICHEREN SPIELBETRIEB:  
 ## UNSER MITGLIEDSBEITRAG.
 
@@ -86,8 +62,8 @@ und eure Kids trotzdem auf den Rasen bekommen.
   {{< /accordionitem >}}
 
   {{< accordionitem title="Wie kann ich der JSG Hohe Warte eine Einzugsermächtigung erteilen?" id="sepa" >}}
-  Hier gelangst Du zu unserem SEPA Lastschriftmandat (Einzugsermächtigung) bei der Volksbank Mittelhessen:
-  Einfach downloaden, ausfüllen, unterschreiben und dann einem aus Eurem Trainerteam geben.
+  Deine Zahldaten hinterlegst Du bequem online – ganz ohne Papier:
+  <a href="https://mitglied.jsg-hohe-warte.de/sepa" target="_blank" rel="noopener">→ Zum Online-Formular für Deine Zahldaten</a>
   {{< /accordionitem >}}
 
 {{< /accordion >}}
