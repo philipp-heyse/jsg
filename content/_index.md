@@ -44,7 +44,7 @@ Wir **spielen** Fußball – und trainieren das auch.
 
 ### Fanshop
 Trikot, Hoodie, Beanie oder Duschtuch – zeig, wo man zusammen Pferde stiehlt.  
-[Zum Fanshop](https://www.printline-giessen.de/JSGHoheWarte/Fanshop/fanartikel/)
+[Zum Fanshop](https://www.printline-shop.de/JSGHoheWarte/Fanartikel/)
 
 ---
 

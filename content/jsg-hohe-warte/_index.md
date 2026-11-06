@@ -54,7 +54,7 @@ Was nach einer pathetischen Fußball-Doku klingt, ist für unsere drei Stammvere
 ## Fußball ist Kontaktsport: Auch bei Beratung und Transfers.
 
 Auch ohne Spielerberater eine super Entscheidung: die für Eure Mitgliedschaft in der JSG Hohe Warte.  
-Der Mitglieds- und Passantrag erfolgt über die Stammvereine. Welcher zu eurem Ort passt, seht ihr ganz einfach unter [Anmeldung]({{< relref "training-spiel/rolle-des-trainers" >}}).
+Der Mitglieds- und Passantrag erfolgt über die Stammvereine. Welcher zu eurem Ort passt, seht ihr ganz einfach unter [Anmeldung]({{< relref "jsg-hohe-warte/mitgliedschaft-beitraege" >}}).
 
 {{< box3 >}}
   {{< box3item title="ANSPRECHPARTNER" link="deine-ansprechpartner/" icon="users" >}}

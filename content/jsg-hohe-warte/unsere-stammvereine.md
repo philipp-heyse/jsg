@@ -25,7 +25,7 @@ Was nach einer pathetischen Fußball-Doku klingt, ist für unsere drei Stammvere
       title="SV 1945 Annerod"
       members="ca. 1.250"
       departments="Fußball, Handball, Tischtennis, Gymnastik, Karate"
-      link="https://dein-link-zum-verein.example"
+      link="https://www.sv-annerod.de/"
       logo="logo-annerod.png" >}}
   {{< /clubs3item >}}
 
@@ -33,7 +33,7 @@ Was nach einer pathetischen Fußball-Doku klingt, ist für unsere drei Stammvere
       title="SV 1928 Garbenteich"
       members="ca. 650"
       departments="Frauengymnastik, Männergymnastik, Fußball, Kinderturnen"
-      link="https://dein-link-zum-verein.example"
+      link="https://www.sportverein-garbenteich.de/"
       logo="logo-garbenteich.png" >}}
   {{< /clubs3item >}}
 
@@ -41,7 +41,7 @@ Was nach einer pathetischen Fußball-Doku klingt, ist für unsere drei Stammvere
       title="TV 1864 Hausen"
       members="ca. 790"
       departments="Fußball, Karneval, Handball, Gymnastik, Tennis"
-      link="https://dein-link-zum-verein.example"
+      link="https://www.tv1864hausen.de/"
       logo="logo-hausen.png" >}}
   {{< /clubs3item >}}
 
